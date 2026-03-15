@@ -9,9 +9,10 @@ function getCookies():any {
       eql=true
       continue
     } else if (cookie[i] === ';'){
-      result[key] = val
+      result[key.trim()] = val
       key=""
       val=""
+      eql = false
       continue
     }
     if (eql)
@@ -19,15 +20,21 @@ function getCookies():any {
     else
       key += cookie[i]
   }
-  result[key] = val
+  if (key !== "")
+    result[key] = val
   return result
 }
 function getCookie(key:string):string|undefined{
   var cookies = getCookies()
   return cookies[key]
 }
-function setCookie(key:string, value:string){
-  document.cookie += key + '=' + value + ';'
+function setCookie(key:string, value:string, days=30){
+  const d = new Date();
+  d.setTime(d.getTime() + (days*24*60*60*1000))
+  let expires = "expires="+ d.toUTCString()
+  document.cookie = key + "=" + value + ";" + expires + ";path=/"
 }
-function deleteCookie(){}
+function deleteCookie(key:string){
+  document.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
 export {getCookies, getCookie, setCookie, deleteCookie}
