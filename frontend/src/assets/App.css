@@ -8,7 +8,7 @@ button {
 
 /* Header Styles */
 header {
-  @apply flex justify-between bg-(--primary-color) m-2 p-2 rounded-md;
+  @apply flex justify-between bg-(--primary-color) m-2 p-2 rounded-md text-white;
 }
 header .title {
   @apply flex items-center;

@@ -1,6 +1,9 @@
+import { useState } from "react"
 import { AboutIcon, AutoIcon, ContactIcon, DarkIcon, HomeIcon, LightIcon, ToolsIcon, WorkIcon } from "./icons"
+import { getTheme, setTheme } from "../utils/theme"
 
 function Header(){
+  const [theme, setLabel] = useState(getTheme)
   return (
     <header>
       <div className="title">
@@ -30,11 +33,22 @@ function Header(){
         </a></li>
       </ul>
       <div className="tab">
-        <button className="flex">
-          <LightIcon width="25px" height="25px"/>
-          <DarkIcon width="25px" height="25px"/>
-          <AutoIcon width="25px" height="25px"/>
-          <span className="ml-2">Auto</span>
+        <button className="flex" onClick={() => {
+          if (theme === "auto") {
+            setTheme("light")
+            setLabel("light")
+          }else if (theme === "light") {
+            setTheme("dark")
+            setLabel("dark")
+          } else {
+            setTheme("auto")
+            setLabel("auto")
+          }
+        }}>
+          {theme==="light"?<LightIcon width="25px" height="25px"/>
+          :theme==="dark"?<DarkIcon width="25px" height="25px"/>
+          :<AutoIcon width="25px" height="25px"/>}
+          <span className="ml-2">{theme}</span>
         </button>
       </div>
     </header>
