@@ -1,7 +1,7 @@
 interface IconProps {
-  color?: string;
-  height?: string;
-  width?: string;
+  color?: string
+  height?: string
+  width?: string
 }
 const defaultProps:IconProps = {
   color: "currentColor",
@@ -9,7 +9,7 @@ const defaultProps:IconProps = {
   width: "30px"
 }
 function HomeIcon(props:IconProps){
-  const { color, height, width } = { ...defaultProps, ...props };
+  const { color, height, width } = { ...defaultProps, ...props }
   return (
     <svg fill={color} height={height} width={width} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="home-alt-3" className="icon glyph">
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -21,7 +21,7 @@ function HomeIcon(props:IconProps){
   )
 }
 function AboutIcon(props:IconProps){
-  const { color, height, width } = { ...defaultProps, ...props };
+  const { color, height, width } = { ...defaultProps, ...props }
   return (
     <svg fill={color} height={height} width={width} viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -34,7 +34,7 @@ function AboutIcon(props:IconProps){
   )
 }
 function WorkIcon(props:IconProps){
-  const { color, height, width } = { ...defaultProps, ...props };
+  const { color, height, width } = { ...defaultProps, ...props }
   return (
     <svg version="1.1" height={height} width={width} id="Icons" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xmlSpace="preserve" fill={color}>
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -49,7 +49,7 @@ function WorkIcon(props:IconProps){
   )
 }
 function ToolsIcon(props:IconProps){
-  const { color, height, width } = { ...defaultProps, ...props };
+  const { color, height, width } = { ...defaultProps, ...props }
   return (
     <svg height={height} width={width} viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="si-glyph si-glyph-hammer-and-wrench" fill="#000000">
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -72,7 +72,7 @@ function ToolsIcon(props:IconProps){
   )
 }
 function ContactIcon(props:IconProps){
-  const { color, height, width } = { ...defaultProps, ...props };
+  const { color, height, width } = { ...defaultProps, ...props }
   return (
     <svg fill={color} height={height} width={width} version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xmlSpace="preserve">
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -87,7 +87,7 @@ function ContactIcon(props:IconProps){
   )
 }
 function LightIcon(props:IconProps){
-  const { color, height, width } = { ...defaultProps, ...props };
+  const { color, height, width } = { ...defaultProps, ...props }
   return (
     <svg version="1.0" height={height} width={width} id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enableBackground="new 0 0 64 64" xmlSpace="preserve" fill={color}>
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -109,7 +109,7 @@ function LightIcon(props:IconProps){
   )
 }
 function DarkIcon(props:IconProps){
-  const { color, height, width } = { ...defaultProps, ...props };
+  const { color, height, width } = { ...defaultProps, ...props }
   return (
     <svg fill={color} height={height} width={width} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="moon-alt-7" className="icon glyph">
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -121,7 +121,7 @@ function DarkIcon(props:IconProps){
   )
 }
 function AutoIcon(props:IconProps){
-  const { color, height, width } = { ...defaultProps, ...props };
+  const { color, height, width } = { ...defaultProps, ...props }
   return (
     <svg viewBox="0 0 24 24" height={height} width={width} version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill={color}>
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -136,4 +136,16 @@ function AutoIcon(props:IconProps){
     </svg>
   )
 }
-export {HomeIcon, AboutIcon, WorkIcon, ToolsIcon, ContactIcon, LightIcon, DarkIcon, AutoIcon}
+function MenuIcon(props:IconProps){
+  const { color, height, width } = { ...defaultProps, ...props }
+  return (
+    <svg viewBox="0 0 24 24" height={height} width={width} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+      <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+      <g id="SVGRepo_iconCarrier">
+        <path d="M4 6H20M4 12H20M4 18H20" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+      </g>
+    </svg>
+  )
+}
+export {HomeIcon, AboutIcon, WorkIcon, ToolsIcon, ContactIcon, LightIcon, DarkIcon, AutoIcon, MenuIcon}

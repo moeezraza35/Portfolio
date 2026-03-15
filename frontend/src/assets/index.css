@@ -7,13 +7,14 @@
 }
 
 :root {
-  --primary-color:    #40a748;
-  --secondary-color:  #849219;
-  --highlight-color:  #7f7f7f;
-  --link-color:       #646cff;
-  --link-hover-color: #535bf2;
-  --primary-font:     Nunito;
-  --secondary-font:   system-ui, Arial, Helvetica, sans-serif;
+  --primary-color:      #40a748;
+  --primary-hover-color:#2f9437;
+  --secondary-color:    #849219;
+  --highlight-color:    #7f7f7f;
+  --link-color:         #646cff;
+  --link-hover-color:   #535bf2;
+  --primary-font:       Nunito;
+  --secondary-font:     system-ui, Arial, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -26,25 +27,25 @@
 }
 @media (prefers-color-scheme: light) {
   :root, html[data-theme="auto"] {
-    --text-color:     #000000;
-    --bg-color:       #ffffff;
+    --text-color:       #000000;
+    --bg-color:         #ffffff;
     color-scheme: light;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root, html[data-theme="auto"] {
-    --text-color:     #ffffff;
-    --bg-color:       #000000;
+    --text-color:       #ffffff;
+    --bg-color:         #000000;
     color-scheme: dark;
   }
 }
 html[data-theme="light"] {
-  --text-color:       #000000;
-  --bg-color:         #ffffff;
+  --text-color:         #000000;
+  --bg-color:           #ffffff;
   color-scheme: light;
 }
 html[data-theme="dark"] {
-  --text-color:       #ffffff;
-  --bg-color:         #000000;
+  --text-color:         #ffffff;
+  --bg-color:           #000000;
   color-scheme: dark;
 }

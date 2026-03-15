@@ -1,16 +1,17 @@
 import { useState } from "react"
-import { AboutIcon, AutoIcon, ContactIcon, DarkIcon, HomeIcon, LightIcon, ToolsIcon, WorkIcon } from "./icons"
+import { AboutIcon, AutoIcon, ContactIcon, DarkIcon, HomeIcon, LightIcon, MenuIcon, ToolsIcon, WorkIcon } from "./icons"
 import { getTheme, setTheme } from "../utils/theme"
 
 function Header(){
   const [theme, setLabel] = useState(getTheme)
+  const [nav, setNav] = useState(false)
   return (
     <header>
       <div className="title">
         <img src="/logo-white.svg" alt="" />
         <span>Moeez Raza</span>
       </div>
-      <ul className="nav">
+      <ul className={"nav" + (nav?" active":"")}>
         <li><a href="">
           <HomeIcon/>
           <span>Home</span>
@@ -28,12 +29,12 @@ function Header(){
           <span>Tools</span>
         </a></li>
         <li><a href="">
-          <span className="text-center"><ContactIcon/></span>
+          <ContactIcon/>
           <span>Contact</span>
         </a></li>
       </ul>
       <div className="tab">
-        <button className="flex" onClick={() => {
+        <button className="flex items-center" onClick={() => {
           if (theme === "auto") {
             setTheme("light")
             setLabel("light")
@@ -48,7 +49,10 @@ function Header(){
           {theme==="light"?<LightIcon width="25px" height="25px"/>
           :theme==="dark"?<DarkIcon width="25px" height="25px"/>
           :<AutoIcon width="25px" height="25px"/>}
-          <span className="ml-2">{theme}</span>
+          <span className="ml-2 capitalize">{theme}</span>
+        </button>
+        <button className="menu" onClick={() => setNav(!nav)}>
+          <MenuIcon/>
         </button>
       </div>
     </header>
