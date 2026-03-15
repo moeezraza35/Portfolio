@@ -1,6 +1,18 @@
 @import "./index.css";
 
 /* Page Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--primary-font)
+}
+h1 {
+  @apply text-9xl;
+}
+h2 {
+  @apply text-7xl;
+}
+h3 {
+  @apply text-4xl
+}
 button {
   @apply cursor-pointer;
 }
@@ -8,7 +20,8 @@ button {
 
 /* Header Styles */
 header {
-  @apply flex relative bg-(--primary-color) m-2 p-2 rounded-md text-white;
+  @apply flex fixed bg-(--primary-color) m-2 p-2 rounded-md text-white;
+  width: calc(100% - 16px)
 }
 header .title {
   @apply flex flex-1 justify-start items-center;
