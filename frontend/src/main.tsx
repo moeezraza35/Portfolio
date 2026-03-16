@@ -7,17 +7,20 @@ import Footer from './components/footer'
 import Home from './pages/home'
 import NotFound from './pages/404'
 import './assets/App.css'
+import { ScrollProvider } from './context/scroll'
 
 function App(){
   return (
     <BrowserRouter>
       <LoadingProvider>
-        <Header/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='*' element={<NotFound/>}/>
-        </Routes>
-        <Footer/>
+        <ScrollProvider>
+          <Header/>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path='*' element={<NotFound/>}/>
+          </Routes>
+          <Footer/>
+        </ScrollProvider>
       </LoadingProvider>
     </BrowserRouter>
   )

@@ -4,17 +4,41 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--primary-font)
 }
-h1 {
-  @apply text-9xl;
-}
-h2 {
-  @apply text-7xl;
-}
-h3 {
-  @apply text-4xl
-}
 button {
   @apply cursor-pointer;
+}
+@media screen and (min-width: 1000px){
+  h1 {
+    @apply text-9xl;
+  }
+  h2 {
+    @apply text-7xl;
+  }
+  h3 {
+    @apply text-4xl
+  }
+}
+@media screen and (max-width: 999px){
+  h1 {
+    @apply text-8xl;
+  }
+  h2 {
+    @apply text-6xl;
+  }
+  h3 {
+    @apply text-3xl
+  }
+}
+@media screen and (max-width: 600px){
+  h1 {
+    @apply text-7xl;
+  }
+  h2 {
+    @apply text-5xl;
+  }
+  h3 {
+    @apply text-2xl
+  }
 }
 /* End Page */
 
@@ -75,3 +99,19 @@ header .tab {
   }
 }
 /* End Header */
+
+/* Hero Section Styling */
+.slider {
+  @apply flex flex-col justify-center fixed w-full h-screen z-[-1] px-2;
+  background: radial-gradient(var(--fg-color), var(--bg-color))
+}
+.img-left, .img-right {
+  @apply h-1/2 w-auto absolute z-[-1];
+}
+.img-left {
+  @apply left-0 top-0;
+}
+.img-right {
+  @apply right-0 bottom-0;
+}
+/* End Hero Section */
