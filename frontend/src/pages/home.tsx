@@ -1,5 +1,6 @@
 import { useContext, useEffect, useRef } from "react"
 import { ScrollContext, type Section } from "../context/scroll"
+import { DoubleSidedContent } from "../components/content"
 
 function HeroSection(){
   const {scrollY, setSections} = useContext(ScrollContext)
@@ -16,7 +17,7 @@ function HeroSection(){
   }, [setSections])
   useEffect(() => {
     const viewHeight = window.innerHeight
-    if (scrollY > viewHeight+1) return
+    // if (scrollY > viewHeight+1) return
     if (!heroSection.current) return
     heroSection.current.childNodes.forEach(node => {
       if (node instanceof HTMLElement){
@@ -48,7 +49,31 @@ function HeroSection(){
 }
 function Home(){
   return (
-    <HeroSection/>
+    <>
+      <HeroSection/>
+      <section>
+        <DoubleSidedContent title="About Me" img="/favicon.svg">
+          <p className="text-justify">
+            Hi, I'm Moeez Raza — a Full-Stack Web and Mobile App Developer with a passion for building digital solutions that make a difference. I specialize in creating responsive, user-friendly applications using modern technologies like React, Fast-API, Django and React Native. Whether it's a dynamic website or a cross-platform mobile app, I love turning complex problems into simple, elegant designs. Let's build something great together.
+          </p>
+        </DoubleSidedContent>
+        <DoubleSidedContent title="Skills" img="/favicon.svg">
+        <p className="text-bold text-(--primary-color)">Frameworks & Libraries</p>
+        <ul className="list-disc pl-6 leading-tight mb-2">
+          <li>Fast-API</li>
+          <li>Django</li>
+          <li>ReactJS</li>
+          <li>React Native</li>
+        </ul>
+        <p className="text-bold text-(--primary-color)">Languages</p>
+        <ul className="list-disc pl-6 leading-tight mb-2">
+          <li>Python</li>
+          <li>JavaScript/TypeScript</li>
+          <li>C/C++</li>
+        </ul>
+        </DoubleSidedContent>
+      </section>
+    </>
   )
 }
 export default Home

@@ -15,7 +15,7 @@ button {
     @apply text-7xl;
   }
   h3 {
-    @apply text-4xl
+    @apply text-5xl
   }
 }
 @media screen and (max-width: 999px){
@@ -115,3 +115,12 @@ header .tab {
   @apply right-0 bottom-0;
 }
 /* End Hero Section */
+
+/* Double Sided Content Styling */
+.doublesided-content {
+  @apply h-screen flex items-center px-4;
+}
+.doublesided-content > * {
+  @apply flex-1;
+}
+/* End Double Sided Content */
