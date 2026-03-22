@@ -105,14 +105,17 @@ header .tab {
   @apply flex flex-col justify-center fixed w-full h-screen z-[-1] px-2;
   background: radial-gradient(var(--fg-color), var(--bg-color))
 }
+.slider-text {
+  @apply min-w-0 mx-auto text-shadow-md;
+}
 .img-left, .img-right {
-  @apply h-1/2 w-auto absolute z-[-1];
+  @apply h-screen min-w-auto max-w-[40%] object-cover absolute z-[-1] opacity-50;
 }
 .img-left {
-  @apply left-0 top-0;
+  @apply left-0 top-0 object-right;
 }
 .img-right {
-  @apply right-0 bottom-0;
+  @apply right-0 bottom-0 object-left;
 }
 /* End Hero Section */
 
