@@ -1,14 +1,25 @@
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { AboutIcon, AutoIcon, ContactIcon, DarkIcon, HomeIcon, LightIcon, MenuIcon, ToolsIcon, WorkIcon } from "./icons"
 import { getTheme, setTheme } from "../utils/theme"
+import { ScrollContext } from "../context/scroll"
 
 function Header(){
+  const {scrollY} = useContext(ScrollContext)
   const [theme, setLabel] = useState(getTheme)
   const [nav, setNav] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  useEffect(() => {
+    if (scrollY > 0 && !scrolled){
+      setScrolled(true)
+    } else if (scrollY == 0 && scrolled) {
+      setScrolled(false)
+    }
+    return
+  }, [scrollY])
   return (
-    <header>
+    <header className={scrolled?"scrolled":"ontop"}>
       <div className="title">
-        <img src="/logo-white.svg" alt="" />
+        <img src={scrolled?"/favicon.svg":"/logo-white.svg"} alt="" />
         <span>Moeez Raza</span>
       </div>
       <ul className={"nav" + (nav?" active":"")}>

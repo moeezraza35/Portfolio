@@ -15,12 +15,13 @@ function Home(){
         </h3>
       </SingleColumnContent>
       <section>
-        <DoubleSidedContent title="About Me" img="/favicon.svg">
+        <h2 className="text-center mb-96">About Me</h2>
+        <DoubleSidedContent title="Profile" img="/images/mypic.png">
           <p className="text-justify">
             Hi, I'm Moeez Raza — a Full-Stack Web and Mobile App Developer with a passion for building digital solutions that make a difference. I specialize in creating responsive, user-friendly applications using modern technologies like React, Fast-API, Django and React Native. Whether it's a dynamic website or a cross-platform mobile app, I love turning complex problems into simple, elegant designs. Let's build something great together.
           </p>
         </DoubleSidedContent>
-        <DoubleSidedContent title="Skills" img="/favicon.svg">
+        <DoubleSidedContent title="Skills" img="/favicon.svg" reverse>
         <p className="text-bold text-(--primary-color)">Frameworks & Libraries</p>
         <ul className="list-disc pl-6 leading-tight mb-2">
           <li>Fast-API</li>

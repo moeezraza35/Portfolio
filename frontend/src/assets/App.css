@@ -44,8 +44,14 @@ button {
 
 /* Header Styles */
 header {
-  @apply flex fixed bg-(--primary-color) m-2 p-2 rounded-md text-white;
+  @apply flex fixed m-2 p-2 rounded-md;
   width: calc(100% - 16px)
+}
+header.ontop {
+  @apply bg-(--primary-color) text-white;
+}
+header.scrolled {
+  @apply backdrop-blur-xs bg-transparent text-(--text-color) border border-[#7f7f7f7f];
 }
 header .title {
   @apply flex flex-1 justify-start items-center;
@@ -120,10 +126,96 @@ header .tab {
 /* End Hero Section */
 
 /* Double Sided Content Styling */
+
 .doublesided-content {
-  @apply h-screen flex items-center px-4;
+  @apply flex h-screen items-center border-b-4 border-(--text-color) overflow-hidden mx-4;
 }
-.doublesided-content > * {
+.doublesided-content > div {
   @apply flex-1;
 }
-/* End Double Sided Content */
+.doublesided-content .img-container {
+  @apply h-screen;
+}
+.doublesided-content .img-container img {
+  @apply w-full h-full object-contain;
+}
+@media screen and (min-width: 701px){
+  .doublesided-content.reverse {
+    @apply flex-row-reverse;
+  }
+}
+@media screen and (max-width: 700px){
+  .doublesided-content {
+    @apply flex-col;
+  }
+}
+/*.doublesided-content {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0 1rem;
+  border-bottom: 4px solid var(--text-color);
+  gap: 2rem;
+}
+
+.doublesided-content > * {
+  flex: 1;
+}
+
+.img-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.img-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 700px) {
+  .doublesided-content {
+    flex-direction: column;
+    min-height: auto;
+    padding: 3rem 0;
+    gap: 2rem;
+  }
+  
+  .doublesided-content > * {
+    width: 100%;
+    flex: none;
+  }
+  
+  .img-container {
+    max-height: 50vh;
+    width: 100%;
+  }
+  
+  .img-container img {
+    max-height: 50vh;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 701px) {
+  .doublesided-content {
+    height: 100vh;
+  }
+  
+  .img-container {
+    height: 100%;
+    max-height: 80vh;
+  }
+  
+  .img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}*/
