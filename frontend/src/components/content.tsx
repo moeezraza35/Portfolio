@@ -46,14 +46,16 @@ function SingleColumnContent(props: {children?: ReactNode, name: string}){
 }
 function DoubleSidedContent(props: {title:string, children?:ReactNode, img:string, reverse?: boolean}) {
   return (
-    <div className={"doublesided-content"+(props.reverse?" reverse":"")}>
-      <div>
-        <h3>{props.title}</h3>
-        <hr className="my-2 border-(--secondary-color)"/>
-        {props.children}
-      </div>
-      <div className="img-container">
-        <img className="h-full object-cover object-bottom" src={props.img} alt={props.title} />
+    <div className="doublesided-content">
+      <div className={props.reverse?"reverse":""}>
+        <div>
+          <h3 className="text-(--primary-color)">{props.title}</h3>
+          <hr className="border-(--secondary-color)" />
+          {props.children}
+        </div>
+        <div className="img-container">
+          <img src={props.img} alt="" />
+        </div>
       </div>
     </div>
   )

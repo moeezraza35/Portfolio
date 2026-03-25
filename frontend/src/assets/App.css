@@ -101,12 +101,12 @@ header .tab {
     @apply flex-row-reverse;
   }
   header .tab button.flex span{
-    @apply text-xs;
+    @apply text-xs mr-2;
   }
 }
 /* End Header */
 
-/* Hero Section Styling */
+/* Intro Section Styling */
 .slider {
   @apply flex flex-col justify-center fixed w-full h-screen z-[-1] px-2;
   background: radial-gradient(var(--fg-color), var(--bg-color))
@@ -123,99 +123,43 @@ header .tab {
 .img-right {
   @apply right-0 bottom-0 object-left;
 }
-/* End Hero Section */
+/* End Intro Section */
 
 /* Double Sided Content Styling */
 
 .doublesided-content {
-  @apply flex h-screen items-center border-b-4 border-(--text-color) overflow-hidden mx-4;
+  @apply h-screen flex justify-center items-center;
 }
 .doublesided-content > div {
+  @apply flex border-b-4 border-(--primary-color) max-h-full overflow-hidden;
+}
+.doublesided-content > div > * {
   @apply flex-1;
 }
-.doublesided-content .img-container {
-  @apply h-screen;
+.img-container {
+  @apply flex ;
 }
-.doublesided-content .img-container img {
-  @apply w-full h-full object-contain;
+.img-container > img {
+  @apply h-full w-full object-contain object-bottom;
 }
-@media screen and (min-width: 701px){
-  .doublesided-content.reverse {
+@media screen and (min-width: 844px) {
+  .doublesided-content > div {
+    @apply w-3xl;
+  }
+}
+@media screen and (max-width: 843px) {
+  .doublesided-content > div {
+    @apply w-9/10;
+  }
+}
+@media screen and (min-width: 604px) {
+  .doublesided-content > div.reverse {
     @apply flex-row-reverse;
   }
 }
-@media screen and (max-width: 700px){
-  .doublesided-content {
-    @apply flex-col;
+@media screen and (max-width: 603px) {
+  .doublesided-content > div {
+    @apply flex-col max-h-screen;
   }
 }
-/*.doublesided-content {
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0 1rem;
-  border-bottom: 4px solid var(--text-color);
-  gap: 2rem;
-}
-
-.doublesided-content > * {
-  flex: 1;
-}
-
-.img-container {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 1rem;
-}
-
-.img-container img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 0.75rem;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-@media screen and (max-width: 700px) {
-  .doublesided-content {
-    flex-direction: column;
-    min-height: auto;
-    padding: 3rem 0;
-    gap: 2rem;
-  }
-  
-  .doublesided-content > * {
-    width: 100%;
-    flex: none;
-  }
-  
-  .img-container {
-    max-height: 50vh;
-    width: 100%;
-  }
-  
-  .img-container img {
-    max-height: 50vh;
-    width: auto;
-    max-width: 100%;
-  }
-}
-
-@media screen and (min-width: 701px) {
-  .doublesided-content {
-    height: 100vh;
-  }
-  
-  .img-container {
-    height: 100%;
-    max-height: 80vh;
-  }
-  
-  .img-container img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-}*/
+/* End Double Sided Content */

@@ -11,8 +11,8 @@ function setTheme(theme:"light"|"dark"|"auto"){
   setCookie("theme",theme)
   document.querySelector("html")?.setAttribute("data-theme",theme)
 }
-document.addEventListener("load", () => {
+function loadTheme() {
   const theme = getTheme()
   document.querySelector("html")?.setAttribute("data-theme",theme)
-})
-export { getTheme, setTheme }
+}
+export { getTheme, setTheme, loadTheme }
