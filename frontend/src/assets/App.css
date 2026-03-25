@@ -15,7 +15,10 @@ button {
     @apply text-7xl;
   }
   h3 {
-    @apply text-5xl
+    @apply text-5xl;
+  }
+  h4 {
+    @apply text-2xl;
   }
 }
 @media screen and (max-width: 999px){
@@ -26,7 +29,10 @@ button {
     @apply text-6xl;
   }
   h3 {
-    @apply text-3xl
+    @apply text-3xl;
+  }
+  h4 {
+    @apply text-xl;
   }
 }
 @media screen and (max-width: 600px){
@@ -37,7 +43,10 @@ button {
     @apply text-5xl;
   }
   h3 {
-    @apply text-2xl
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-lg;
   }
 }
 /* End Page */
