@@ -60,11 +60,35 @@ function DoubleSidedContent(props: {title:string, children?:ReactNode, img:strin
     </div>
   )
 }
-function CardContent() {
+function CardContent(props: { img:string, title:string, children?:ReactNode }) {
   return (
-    <div>
-      <img src="" alt="" />
+    <div className="group max-w-3xs relative bg-(--bg-secondary) rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+      {/* Image Container */}
+      <div className="relative overflow-hidden h-48">
+        <img 
+          src={props.img} 
+          alt={props.title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </div>
+      
+      {/* Content */}
+      <div className="p-5">
+        <h4 className="text-xl font-bold mb-2 text-(--text-primary) group-hover:text-(--primary-color) transition-colors">
+          {props.title}
+        </h4>
+        <div className="text-(--text-secondary) text-sm leading-relaxed">
+          {props.children}
+        </div>
+        
+        {/* Optional: Read more link */}
+        <button className="mt-4 text-(--primary-color) text-sm font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+          Learn More →
+        </button>
+      </div>
     </div>
-  )
+  );
 }
 export { SingleColumnContent, DoubleSidedContent, CardContent }

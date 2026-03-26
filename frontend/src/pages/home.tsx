@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef } from "react"
-import { DoubleSidedContent, SingleColumnContent } from "../components/content"
+import { DoubleSidedContent, SingleColumnContent, CardContent } from "../components/content"
 import { ScrollContext } from "../context/scroll"
 
 function IntroSection(){
@@ -55,11 +55,38 @@ function AboutSection(){
     </section>
   )
 }
+function WorkSection(){
+  return (
+    <section>
+      <div className="h-screen flex justify-center items-center">
+        <h2>My Work</h2>
+      </div>
+      <div className="flex flex-wrap justify-center min-h-screen">
+        <CardContent img="/favicon.svg" title="OBMMS">
+          <p>Online Bus Monitoring & Management System</p>
+        </CardContent>
+        <CardContent img="/favicon.svg" title="GTRS Dashboard">
+          <p>A Dashboard pannel for car insurance company</p>
+        </CardContent>
+        <CardContent img="/favicon.svg" title="RIC MS">
+          <p>Riphah International College Management System. Primarily focus on both staff and students based on their categories</p>
+        </CardContent>
+        <CardContent img="/favicon.svg" title="RFID Attendance">
+          <p>Radio Frequency Identification Attendance System is Arduino (Hardware) based project.</p>
+        </CardContent>
+        <CardContent img="/favicon.svg" title="Vista Pakistan">
+          <p>Vista Pakistan is a fully functional and dynamic website for tourist support agency in Pakistan.</p>
+        </CardContent>
+      </div>
+    </section>
+  )
+}
 function Home(){
   return (
     <>
       <IntroSection/>
       <AboutSection/>
+      <WorkSection/>
     </>
   )
 }

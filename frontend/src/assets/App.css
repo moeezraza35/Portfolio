@@ -53,7 +53,7 @@ button {
 
 /* Header Styles */
 header {
-  @apply flex fixed m-2 p-2 rounded-md;
+  @apply flex fixed m-2 p-2 rounded-md z-10;
   width: calc(100% - 16px)
 }
 header.ontop {
