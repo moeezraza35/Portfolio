@@ -1,59 +1,58 @@
+import type { ReactNode } from "react";
+
+function TitleCol(){
+  return (
+    <div className="footer-title">
+      <h4>
+        <span className="mr-2">
+          <img src="/logo-white.svg" className="h-full w-auto" alt="logo" />
+        </span>
+        Moeez Raza
+      </h4>
+      <hr />
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, maiores.
+      </p>
+    </div>
+  )
+}
+function FooterCol(props: {children: ReactNode, title: string}) {
+  return (
+    <div className="footer-col">
+      <h4 className="font-semibold">{props.title}</h4>
+      <hr />
+      <ul>
+        {props.children}
+      </ul>
+    </div>
+  )
+}
 function Footer() {
   return (
-    <footer className="min-h-[calc(100vh-16px)] m-2 bg-(--primary-color) text-white rounded-md flex flex-col justify-between p-4">
+    <footer>
       <div></div>
-      
-      {/* Flexbox layout */}
-      <div className="flex flex-wrap justify-center gap-6 px-4">
-        {/* Column 1 - Takes full width on mobile, auto on desktop */}
-        <div className="w-full md:w-auto flex-1 min-w-50">
-          <h4 className="flex h-9 items-center">
-            <span className="mr-2">
-              <img src="/logo-white.svg" className="h-full w-auto" alt="logo" />
-            </span>
-            Moeez Raza
-          </h4>
-          <hr className="my-2 border-white/20" />
-          <p className="text-sm text-white/80 leading-relaxed">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, maiores.
-          </p>
-        </div>
+      <div className="footer-row">
+        <TitleCol/>
+        <FooterCol title="Quick Links">
+          <li>Home</li>
+          <li>About</li>
+          <li>Work</li>
+          <li>Tools</li>
+          <li>Contact</li>
+        </FooterCol>
 
-        {/* Column 2 */}
-        <div className="w-[calc(50%-1rem)] md:w-auto flex-1 min-w-30">
-          <h4 className="font-semibold">Quick Links</h4>
-          <hr className="my-2 border-white/20" />
-          <ul className="space-y-1 text-sm text-white/80">
-            <li>Home</li>
-            <li>About</li>
-            <li>Work</li>
-            <li>Tools</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-
-        {/* Column 3 */}
-        <div className="w-[calc(50%-1rem)] md:w-auto flex-1 min-w-30">
-          <h4 className="font-semibold">Social</h4>
-          <hr className="my-2 border-white/20" />
-          <ul className="space-y-1 text-sm text-white/80">
+        <FooterCol title="Social">
             <li>LinkedIn</li>
             <li>GitHub</li>
             <li>Stack Overflow</li>
             <li>Facebook</li>
             <li>Instagram</li>
-          </ul>
-        </div>
+        </FooterCol>
 
-        {/* Column 4 */}
-        <div className="w-full md:w-auto flex-1 min-w-37.5">
-          <h4 className="font-semibold">Contact</h4>
-          <hr className="my-2 border-white/20" />
-          <ul className="space-y-1 text-sm text-white/80">
-            <li className="break-all">moeezrazaseven@gmail.com</li>
-            <li>WhatsApp</li>
-          </ul>
-        </div>
+        <FooterCol title="Contact">
+          <li className="break-all">moeezrazaseven@gmail.com</li>
+          <li>WhatsApp</li>
+        </FooterCol>
       </div>
 
       <div>

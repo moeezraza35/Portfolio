@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef } from "react"
-import { DoubleSidedContent, SingleColumnContent, CardContent } from "../components/content"
+import { DoubleSidedContent, SingleColumnContent, CardContent, ImageBox } from "../components/content"
 import { ScrollContext } from "../context/scroll"
 
 function IntroSection(){
@@ -81,12 +81,38 @@ function WorkSection(){
     </section>
   )
 }
+function ToolsSection(){
+  return (
+    <section>
+      <div className="h-screen flex justify-center items-center">
+        <h2>My Tools</h2>
+      </div>
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <ImageBox name="VS Code" type="Code Editor"/>
+          <ImageBox name="VS Code" type="Code Editor"/>
+          <ImageBox name="VS Code" type="Code Editor"/>
+          <ImageBox name="VS Code" type="Code Editor"/>
+          <ImageBox name="VS Code" type="Code Editor"/>
+          <ImageBox name="VS Code" type="Code Editor"/>
+          <ImageBox name="VS Code" type="Code Editor"/>
+          <ImageBox name="VS Code" type="Code Editor"/>
+          <ImageBox name="VS Code" type="Code Editor"/>
+          <ImageBox name="VS Code" type="Code Editor"/>
+          <ImageBox name="VS Code" type="Code Editor"/>
+          <ImageBox name="VS Code" type="Code Editor"/>
+        </div>
+      </div>
+    </section>
+  )
+}
 function Home(){
   return (
     <>
       <IntroSection/>
       <AboutSection/>
       <WorkSection/>
+      <ToolsSection/>
     </>
   )
 }
