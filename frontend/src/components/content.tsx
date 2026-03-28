@@ -34,8 +34,8 @@ function SingleColumnContent(props: {children?: ReactNode, name: string}){
   }, [scrollY])
   return (
     <section ref={thisSection} className="h-[200vh]">
-      <div className="slider">
-        <div className="slider-text">
+      <div className="slide">
+        <div className="slide-text">
           { props.children }
         </div>
         <img src="/images/background-left.png" className="img-left"/>

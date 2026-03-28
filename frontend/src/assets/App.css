@@ -1,6 +1,9 @@
 @import "./index.css";
 
 /* Page Styles */
+body {
+  @apply w-screen overflow-x-hidden;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--primary-font)
 }
@@ -115,24 +118,24 @@ header .tab {
 }
 /* End Header */
 
-/* Intro Section Styling */
-.slider {
-  @apply flex flex-col justify-center fixed w-full h-screen z-[-1] px-2;
-  background: radial-gradient(var(--fg-color), var(--bg-color))
+/* Slide Styling */
+.slide {
+  @apply min-h-screen flex justify-center items-center sticky top-0 w-full overflow-hidden z-[-1];
+  background: radial-gradient(var(--fg-color), var(--bg-color));
 }
-.slider-text {
+.slide-text {
   @apply min-w-0 mx-auto text-shadow-md;
 }
-.img-left, .img-right {
+.slide .img-left, .slide .img-right {
   @apply h-screen min-w-auto max-w-[40%] object-cover absolute z-[-1] opacity-50;
 }
-.img-left {
+.slide .img-left {
   @apply left-0 top-0 object-right;
 }
-.img-right {
+.slide .img-right {
   @apply right-0 bottom-0 object-left;
 }
-/* End Intro Section */
+/* End Styling */
 
 /* Double Sided Content Styling */
 
@@ -175,7 +178,7 @@ header .tab {
 
 /* Card Content Styling */
 .card {
-  @apply max-w-3xs relative bg-(--bg-secondary) rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2;
+  @apply max-w-3xs relative bg-(--bg-secondary) rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 my-4;
 }
 .card-img {
   @apply relative overflow-hidden h-48;
