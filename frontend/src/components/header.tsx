@@ -4,7 +4,7 @@ import { getTheme, setTheme } from "../utils/theme"
 import { ScrollContext } from "../context/scroll"
 
 function Header(){
-  const {scrollY} = useContext(ScrollContext)
+  const { currentSection, scrollY } = useContext(ScrollContext)
   const [theme, setLabel] = useState(getTheme)
   const [nav, setNav] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -23,23 +23,23 @@ function Header(){
         <span>Moeez Raza</span>
       </div>
       <ul className={"nav" + (nav?" active":"")}>
-        <li><a href="">
+        <li className={currentSection==="home"?"opacity-50":""}><a href="/">
           <HomeIcon/>
           <span>Home</span>
         </a></li>
-        <li><a href="">
+        <li className={currentSection==="about"?"opacity-50":""}><a href="/#about">
           <AboutIcon/>
           <span>About</span>
         </a></li>
-        <li><a href="">
+        <li className={currentSection==="work"?"opacity-50":""}><a href="/#work">
           <WorkIcon/>
           <span>Work</span>
         </a></li>
-        <li><a href="">
+        <li className={currentSection==="tools"?"opacity-50":""}><a href="/#tools">
           <ToolsIcon/>
           <span>Tools</span>
         </a></li>
-        <li><a href="">
+        <li className={currentSection==="contact"?"opacity-50":""}><a href="">
           <ContactIcon/>
           <span>Contact</span>
         </a></li>

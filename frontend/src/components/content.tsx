@@ -49,7 +49,7 @@ function RegisteredSection(props: {children?:ReactNode, name:string, className?:
     ])
   }, [setSections])
   return (
-    <section ref={thisSection} className={props.className || ""}>
+    <section ref={thisSection} className={props.className || ""} id={props.name}>
       {props.children}
     </section>
   )

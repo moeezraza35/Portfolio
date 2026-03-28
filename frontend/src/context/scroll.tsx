@@ -24,15 +24,16 @@ function ScrollProvider(props:{children:ReactNode}){
   const isInSection = (section:Section):Boolean => {
     var viewHeight = window.innerHeight
     var boundary = section.start < viewHeight? 0 : viewHeight / 2
-    return scrollY >= section.start - boundary && scrollY <= section.start + section.height + viewHeight / 2
+    return scrollY >= section.start - boundary && scrollY <= section.start + section.height - viewHeight / 2
   }
   const handleScroll = () => {
     for (var i=0; i<sections.length; i++){
       if (isInSection(sections[i])) {
         setSection(sections[i].name)
-        break
+        return
       }
     }
+    setSection("")
   }
   useEffect(() => {
     window.addEventListener("scroll", () => setScroll(window.scrollY))

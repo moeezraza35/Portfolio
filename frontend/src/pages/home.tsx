@@ -88,7 +88,7 @@ function ToolsSection(){
     <OnScreenContent thisSection={thisSection} onScreen={onScreen} setOnScreen={setOnScreen}>
       <RegisteredSection name="tools" ref={thisSection}>
         <div className="slide">
-          <h2 className={"text-center transition-all ease-out duration-700" + (onScreen?"":" opacity-0 scale-200")}>My Tools</h2>
+          <h2 className={"slide-heading" + (onScreen?"":" opacity-0 scale-200")}>My Tools</h2>
         </div>
         <div className="bg-(--bg-color)">
           <div className="max-w-6xl mx-auto py-10">

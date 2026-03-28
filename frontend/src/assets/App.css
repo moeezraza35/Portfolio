@@ -4,6 +4,9 @@
 body {
   @apply w-screen overflow-x-hidden;
 }
+*::selection {
+  @apply bg-(--highlight-color) text-green-500;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--primary-font)
 }
