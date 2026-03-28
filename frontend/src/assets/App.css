@@ -135,6 +135,9 @@ header .tab {
 .slide .img-right {
   @apply right-0 bottom-0 object-left;
 }
+.slide-heading {
+  @apply text-center transition-all ease-out duration-300;
+}
 /* End Styling */
 
 /* Double Sided Content Styling */

@@ -1,22 +1,12 @@
-import { useContext, useEffect, useRef, type ReactNode } from "react"
+import { useContext, useEffect, useRef, type ReactNode, type RefObject } from "react"
 import { ScrollContext, type Section } from "../context/scroll"
 
 function SingleColumnContent(props: {children?: ReactNode, name: string}){
-  const {scrollY, setSections} = useContext(ScrollContext)
-  const thisSection = useRef<HTMLElement>(null)
+  const { scrollY } = useContext(ScrollContext)
+  const thisSection = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (!thisSection.current) return
-    setSections((prev: Section[]) => [
-      ...prev, {
-        name: props.name,
-        start: thisSection.current?.offsetTop,
-        height: thisSection.current?.offsetHeight
-      }
-    ])
-  }, [setSections])
-  useEffect(() => {
     const viewHeight = window.innerHeight
-    if (!thisSection.current) return
     const viewStart = thisSection.current.offsetTop
     const scrollStart = scrollY - viewStart
     if (
@@ -33,7 +23,7 @@ function SingleColumnContent(props: {children?: ReactNode, name: string}){
     })
   }, [scrollY])
   return (
-    <section ref={thisSection} className="h-[200vh]">
+    <RegisteredSection name={props.name} className="h-[200vh]" ref={thisSection}>
       <div className="slide">
         <div className="slide-text">
           { props.children }
@@ -41,7 +31,44 @@ function SingleColumnContent(props: {children?: ReactNode, name: string}){
         <img src="/images/background-left.png" className="img-left"/>
         <img src="/images/background-right.png" className="img-right"/>
       </div>
+    </RegisteredSection>
+  )
+}
+function RegisteredSection(props: {children?:ReactNode, name:string, className?:string, ref?:RefObject<HTMLElement|null>}){
+  const thisSection = useRef<HTMLElement>(null)
+  const { setSections } = useContext(ScrollContext)
+  props.ref? props.ref.current = thisSection.current : null
+  useEffect(() => {
+    if (!thisSection.current) return
+    setSections((prev: Section[]) => [
+      ...prev, {
+        name: props.name,
+        start: thisSection.current?.offsetTop,
+        height: thisSection.current?.offsetHeight
+      }
+    ])
+  }, [setSections])
+  return (
+    <section ref={thisSection} className={props.className || ""}>
+      {props.children}
     </section>
+  )
+}
+function OnScreenContent(props: {children:ReactNode, thisSection: RefObject<HTMLElement|null>, onScreen:boolean, setOnScreen:Function}){
+  const { scrollY } = useContext(ScrollContext)
+  useEffect(() => {
+    if (!props.thisSection.current) return
+    const viewStart = props.thisSection.current.offsetTop
+    if (scrollY > viewStart-100 && !props.onScreen) {
+      props.setOnScreen(true)
+    } else if (scrollY < viewStart-100 && props.onScreen) {
+      props.setOnScreen(false)
+    }
+  }, [scrollY])
+  return (
+    <>
+      {props.children}
+    </>
   )
 }
 function DoubleSidedContent(props: {title:string, children?:ReactNode, img:string, reverse?: boolean}) {
@@ -100,4 +127,4 @@ function ImageBox (props: {name:string, type:string}){
     </div>
   )
 }
-export { SingleColumnContent, DoubleSidedContent, CardContent, ImageBox }
+export { SingleColumnContent, RegisteredSection, OnScreenContent, DoubleSidedContent, CardContent, ImageBox }
