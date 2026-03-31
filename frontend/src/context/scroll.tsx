@@ -40,7 +40,7 @@ function ScrollProvider(props:{children:ReactNode}){
   }, [])
   useEffect(() => {
     handleScroll()
-  }, [scrollY])
+  }, [scrollY, sections])
   return (
     <ScrollContext.Provider value={{
       currentSection: currentSection,

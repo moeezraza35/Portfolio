@@ -39,7 +39,7 @@ function Header(){
           <ToolsIcon/>
           <span>Tools</span>
         </a></li>
-        <li className={currentSection==="contact"?"opacity-50":""}><a href="">
+        <li className={currentSection==="contact"?"opacity-50":""}><a href="/contact/">
           <ContactIcon/>
           <span>Contact</span>
         </a></li>
