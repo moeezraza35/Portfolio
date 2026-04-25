@@ -29,7 +29,7 @@
   :root, html[data-theme="auto"] {
     --text-color:         #000000;
     --bg-color:           #ffffff;
-    --fg-color:           #cdcdcd;
+    --fg-color:           #e0e0e0;
     color-scheme: light;
   }
 }
@@ -44,7 +44,7 @@
 html[data-theme="light"] {
   --text-color:           #000000;
   --bg-color:             #ffffff;
-  --fg-color:             #cdcdcd;
+  --fg-color:             #e0e0e0;
   color-scheme: light;
 }
 html[data-theme="dark"] {

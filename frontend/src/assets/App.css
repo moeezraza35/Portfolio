@@ -1,7 +1,10 @@
 @import "./index.css";
 
 /* Page Styles */
-body {
+html {
+  @apply overflow-x-hidden;
+}
+body{
   @apply w-screen overflow-x-hidden;
 }
 *::selection {
@@ -132,11 +135,11 @@ header .tab {
 
 /* Slide Styling */
 .slide {
-  @apply min-h-screen flex justify-center items-center sticky top-0 w-full overflow-hidden z-[-1];
+  @apply min-h-screen flex justify-center items-center top-0 w-screen overflow-hidden z-[-1];
   background: radial-gradient(var(--fg-color), var(--bg-color));
 }
 .slide-text {
-  @apply min-w-0 mx-auto text-shadow-md;
+  @apply min-w-0 mx-auto text-shadow-md p-4;
 }
 .slide .img-left, .slide .img-right {
   @apply h-screen min-w-auto max-w-[40%] object-cover absolute z-[-1] opacity-50;

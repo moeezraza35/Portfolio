@@ -4,6 +4,7 @@ import { ScrollContext, type Section } from "../context/scroll"
 function SingleColumnContent(props: {children?: ReactNode, name: string}){
   const { scrollY } = useContext(ScrollContext)
   const thisSection = useRef<HTMLDivElement>(null)
+  const slider = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (!thisSection.current) return
     const viewHeight = window.innerHeight
@@ -15,7 +16,7 @@ function SingleColumnContent(props: {children?: ReactNode, name: string}){
     ) return // Optimizing the performance
 
     const ratio = scrollStart / viewHeight
-    thisSection.current.childNodes.forEach(node => {
+    slider.current?.childNodes.forEach(node => {
       if (node instanceof HTMLElement){
         node.style.opacity = "" + (1 - ratio)
         node.style.scale = "" + (1 + ratio)
@@ -24,12 +25,14 @@ function SingleColumnContent(props: {children?: ReactNode, name: string}){
   }, [scrollY])
   return (
     <RegisteredSection name={props.name} className="h-[200vh]" ref={thisSection}>
-      <div className="slide">
-        <div className="slide-text">
-          { props.children }
+      <div className="fixed" ref={slider}>
+        <div className="slide">
+          <div className="slide-text">
+            { props.children }
+          </div>
+          <img src="/images/background-left.png" className="img-left"/>
+          <img src="/images/background-right.png" className="img-right"/>
         </div>
-        <img src="/images/background-left.png" className="img-left"/>
-        <img src="/images/background-right.png" className="img-right"/>
       </div>
     </RegisteredSection>
   )

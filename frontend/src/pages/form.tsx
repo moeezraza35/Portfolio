@@ -1,6 +1,7 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { OnScreenContent, RegisteredSection } from "../components/content"
 import Input from "../components/input";
+import { Link } from "react-router-dom";
 
 interface FormData {
   name: string;
@@ -9,7 +10,6 @@ interface FormData {
 }
 
 function ContactForm(){
-  
   const thisSection = useRef<HTMLElement>(null)
   const [onScreen, setOnScreen] = useState(false)
   
@@ -30,6 +30,10 @@ function ContactForm(){
     e.preventDefault();
     console.log('Form submitted:', formData);
   };
+
+  useEffect(() => {
+    setOnScreen(true)
+  }, [])
   return (
     <OnScreenContent thisSection={thisSection} onScreen={onScreen} setOnScreen={setOnScreen}>
       <RegisteredSection name="contact" ref={thisSection}>
@@ -38,7 +42,7 @@ function ContactForm(){
         </div>
         <div className="doublesided-content bg-(--bg-color) py-32">
           <div className="gap-4">
-            <div>
+            <div className="flex-1 overflow-y-auto max-h-125">
               <h4>Terms & Conditions</h4>
               <dl>
                 <dt>No OTP verification</dt>
@@ -92,12 +96,13 @@ function ContactForm(){
                 handleChange={handleChange}/>
 
               {/* Submit Button */}
-              <button
-                type="submit"
+              <Link
+                // type="submit"
                 className="w-full py-3 px-6 bg-(--primary-color) text-white font-semibold rounded-lg hover:bg-(--primary-color)/90 transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-(--primary-color) focus:ring-offset-2"
+                to={"/contact/submit/"}
               >
                 Send Message →
-              </button>
+              </Link>
 
               <p className="text-center text-xs text-(--text-secondary) mt-6">
                 I'll get back to you within 24 hours.

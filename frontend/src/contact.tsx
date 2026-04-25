@@ -9,6 +9,7 @@ import Footer from './components/footer'
 import ContactForm from './pages/form'
 import NotFound from './pages/404'
 import './assets/App.css'
+import Submit from './pages/submit'
 
 function App(){
   useEffect(() => {loadTheme()}, [])
@@ -19,6 +20,7 @@ function App(){
           <Header/>
           <Routes>
             <Route path='/contact/' element={<ContactForm/>}/>
+            <Route path="/contact/submit/" element={<Submit/>}/>
             <Route path='*' element={<NotFound/>}/>
           </Routes>
           <Footer/>
