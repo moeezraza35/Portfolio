@@ -50,7 +50,8 @@ function Input(props: {name:string, type:"text"|"number"|"email"|"password"|"tex
         onChange={e => props.handleChange(e)}/>:
       <input
         {...options}
-        onChange={e => props.handleChange(e)}/>
+        onChange={e => props.handleChange(e)}
+        type={props.type}/>
       }
     </label>
   )
