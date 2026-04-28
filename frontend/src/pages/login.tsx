@@ -1,5 +1,6 @@
 import { useState, type ChangeEvent } from "react"
 import Input from "../components/input"
+import { Link } from "react-router-dom"
 
 function Login(){
   const [username, setUsername] = useState("")
@@ -24,6 +25,15 @@ function Login(){
             visible?" Hide Password":" Show Password"
           }</pre>
         </label>
+        <div className="mt-4 mb-2">
+          <Link
+            // type="submit"
+            className="submit-btn"
+            to={"/admin/"}
+          >
+            Send Message →
+          </Link>
+        </div>
       </form>
     </div>
   )

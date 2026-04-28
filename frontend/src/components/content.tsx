@@ -26,7 +26,7 @@ function SingleColumnContent(props: {children?: ReactNode, name: string}){
   return (
     <RegisteredSection name={props.name} className="h-[200vh]" ref={thisSection}>
       <div className="fixed" ref={slider}>
-        <div className="slide">
+        <div className="slide" style={{opacity: 1, scale: 1}}>
           <div className="slide-text">
             { props.children }
           </div>
