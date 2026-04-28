@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { KeyIcon, LogoutIcon, MessagesIcon } from "../components/icons";
 import Input from "../components/input";
 
@@ -11,11 +11,6 @@ function Messages() {
     { id: 4, email: "user4@example.com" },
     { id: 5, email: "user5@example.com" },
   ];
-
-  const handleView = (id: number) => {
-    console.log(`View message with id: ${id}`);
-    // Implement view logic (e.g., open modal, fetch message details)
-  };
 
   const handleDelete = (id: number) => {
     console.log(`Delete message with id: ${id}`);
@@ -48,12 +43,12 @@ function Messages() {
                 {message.email}
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm space-x-2">
-                <button
-                  onClick={() => handleView(message.id)}
+                <Link
+                  to={`/admin/${message.id}`}
                   className="px-3 py-1 bg-(--primary-color) text-white rounded-md hover:bg-(--primary-color)/80 transition"
                 >
                   View
-                </button>
+                </Link>
                 <button
                   onClick={() => handleDelete(message.id)}
                   className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition"

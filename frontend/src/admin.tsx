@@ -8,6 +8,7 @@ import Header from './components/header'
 import Footer from './components/footer'
 import { LoadingProvider } from './context/loading'
 import { ScrollProvider } from './context/scroll'
+import MessageDetail from './pages/message'
 
 function App(){
   return (
@@ -18,6 +19,7 @@ function App(){
           <Routes>
             <Route path='/admin/' element={<Dashboard/>}/>
             <Route path='/admin/login/' element={<Login/>}/>
+            <Route path='/admin/:message/' element={<MessageDetail/>}/>
           </Routes>
           <Footer/>
         </ScrollProvider>
