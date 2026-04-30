@@ -257,18 +257,6 @@ header .tab {
 }
 /* End Text Input */
 
-/* Aside Styling */
-aside {
-  @apply w-64 bg-(--bg-secondary) rounded-xl shadow-lg overflow-hidden;
-}
-.aside-button {
-  @apply w-full flex items-center gap-3 px-4 py-3 text-(--text-primary) rounded-lg hover:bg-(--primary-color)/10 hover:text-(--primary-color) transition-all duration-200;
-}
-.aside-button.active {
-  @apply bg-(--primary-color)/50;
-}
-/* End Aside */
-
 /* Footer Styling */
 footer {
   @apply min-h-[calc(100vh-16px)] m-2 bg-(--primary-color) text-white rounded-md flex flex-col justify-between p-4;

@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react"
 import { OnScreenContent, RegisteredSection } from "../components/content"
 import Input from "../components/input";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { send } from "../utils/request";
 
 interface FormData {
   name: string;
@@ -12,7 +13,7 @@ interface FormData {
 function ContactForm(){
   const thisSection = useRef<HTMLElement>(null)
   const [onScreen, setOnScreen] = useState(false)
-  
+  const navigate = useNavigate()
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -26,9 +27,12 @@ function ContactForm(){
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log('Form submitted:', formData)
+    await send("https://script.google.com/macros/s/AKfycbwqpg1sL5qtPMn2DB7F2NgSpgdtZpJLdLqblEazCFXdy0n7370n0cb5EQh-Ip-PTFia/exec", "POST", formData)
+    window.scrollTo(0,0)
+    navigate("/contact/submit/")
   };
 
   useEffect(() => {
@@ -96,13 +100,12 @@ function ContactForm(){
                 handleChange={handleChange}/>
 
               {/* Submit Button */}
-              <Link
-                // type="submit"
+              <button
+                type="submit"
                 className="w-full py-3 px-6 bg-(--primary-color) text-white font-semibold rounded-lg hover:bg-(--primary-color)/90 transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-(--primary-color) focus:ring-offset-2"
-                to={"/contact/submit/"}
-              >
+                /* to={"/contact/submit/"}*/>
                 Send Message →
-              </Link>
+              </button>
 
               <p className="text-center text-xs text-(--text-secondary) mt-6">
                 I'll get back to you within 24 hours.
