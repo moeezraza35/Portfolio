@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { send } from "../utils/request"
 import { OnScreenContent, RegisteredSection } from "../components/content"
 import Input from "../components/input";
-import { useNavigate } from "react-router-dom";
-import { send } from "../utils/request";
 
 interface FormData {
   name: string;

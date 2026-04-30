@@ -1,6 +1,6 @@
 import { StrictMode, useEffect } from 'react'
-import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { createRoot } from 'react-dom/client'
 import { LoadingProvider } from './context/loading'
 import { ScrollProvider } from './context/scroll'
 import { loadTheme } from './utils/theme'
@@ -8,8 +8,8 @@ import Header from './components/header'
 import Footer from './components/footer'
 import ContactForm from './pages/form'
 import NotFound from './pages/404'
-import './assets/App.css'
 import Submit from './pages/submit'
+import './assets/App.css'
 
 function App(){
   useEffect(() => {loadTheme()}, [])
