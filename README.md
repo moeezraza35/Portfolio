@@ -14,7 +14,6 @@
 - Contact form (Google Sheets integration – no backend hassle)
 - Project cards with hover effects
 - Skills / tools showcase with icon grid
-- Admin area (message viewer)
 - Optimized performance & accessibility
 
 ## 🛠️ Tech Stack
@@ -23,7 +22,7 @@
 - **Styling:** Tailwind CSS + custom CSS variables
 - **Routing:** React Router DOM
 - **State Management:** Context API (scroll observer, theme)
-- **Deployment:** [Netlify / Vercel / your platform]
+- **Deployment:** Netlify
 - **Form Handling:** Google Apps Script (no‑backend contact form)
 
 ## 📦 Installation & Setup
@@ -84,7 +83,7 @@ The contact form submits data to a Google Sheet via a Google Apps Script web app
 
 ## 📝 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [MIT License](LICENSE.md).
 
 ---
 

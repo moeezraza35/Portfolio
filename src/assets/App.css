@@ -1,9 +1,6 @@
 @import "./index.css";
 
 /* Page Styles */
-html {
-  @apply overflow-x-hidden;
-}
 body{
   @apply w-screen overflow-x-hidden;
 }

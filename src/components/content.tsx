@@ -19,13 +19,12 @@ function SingleColumnContent(props: {children?: ReactNode, name: string}){
     slider.current?.childNodes.forEach(node => {
       if (node instanceof HTMLElement){
         node.style.opacity = "" + (1 - ratio)
-        node.style.scale = "" + (1 + ratio)
       }
     })
   }, [scrollY])
   return (
     <RegisteredSection name={props.name} className="h-[200vh]" ref={thisSection}>
-      <div className="fixed" ref={slider}>
+      <div className="sticky top-0" ref={slider}>
         <div className="slide" style={{opacity: 1, scale: 1}}>
           <div className="slide-text">
             { props.children }

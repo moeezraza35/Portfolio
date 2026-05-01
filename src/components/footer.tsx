@@ -11,7 +11,7 @@ function TitleCol(){
       </h4>
       <hr />
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, maiores.
+        I build software that works beautifully. Got a question or an idea? I'd love to hear from you - feel free to ask anything.
       </p>
     </div>
   )
@@ -34,30 +34,30 @@ function Footer() {
       <div className="footer-row">
         <TitleCol/>
         <FooterCol title="Quick Links">
-          <li>Home</li>
-          <li>About</li>
-          <li>Work</li>
-          <li>Tools</li>
-          <li>Contact</li>
+          <li><a href={"/"}>Home</a></li>
+          <li><a href={"/#about"}>About</a></li>
+          <li><a href={"/#work"}>Work</a></li>
+          <li><a href={"/#tools"}>Tools</a></li>
+          <li><a href={"/contact/"}>Contact</a></li>
         </FooterCol>
 
         <FooterCol title="Social">
-            <li>LinkedIn</li>
-            <li>GitHub</li>
-            <li>Stack Overflow</li>
-            <li>Facebook</li>
-            <li>Instagram</li>
+          <li><a href="https://www.linkedin.com/in/moeez-raza-773103282/">LinkedIn</a></li>
+          <li><a href="https://www.fiverr.com/moeez_raza_35">Fiverr</a></li>
+          <li><a href="https://www.upwork.com/freelancers/~01e437ccad7a0bf3b0">Upwork</a></li>
+          <li><a href="https://sproutgigs.com/u/moeezraza">SproutGigs</a></li>
+          <li><a href="https://stackoverflow.com/users/20807706/moeez-raza">Stack Overflow</a></li>
         </FooterCol>
 
         <FooterCol title="Contact">
-          <li className="break-all">moeezrazaseven@gmail.com</li>
-          <li>WhatsApp</li>
+          <li className="break-all"><a href="mailto:moeezrazaseven@gmail.com">Email</a></li>
+          <li><a href="https://wa.me/923459445922">WhatsApp</a></li>
         </FooterCol>
       </div>
 
       <div>
         <p className="text-center text-sm text-white/70">
-          All copyrights reserved @moeezraza.dev
+          Copyright © 2026 Moeez Raza.
         </p>
       </div>
     </footer>

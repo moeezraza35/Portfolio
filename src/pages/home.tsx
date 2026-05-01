@@ -68,7 +68,7 @@ function WorkSection(){
             <p>A Dashboard pannel for car insurance company. Worked as a backend developer for a client project. Helps in saving cars data along with owner's details.</p>
           </CardContent>
           <CardContent img="/images/ric.jpg" title="RIC MS">
-            <p>Riphah International College Management System. Primarily focus on both staff and students based on their categories</p>
+            <p>Riphah International College Management System. Primarily focus on both staff and students attendance based on their categories & departments</p>
           </CardContent>
           <CardContent img="/images/arduino.jpg" title="RFID Attendance">
             <p>Radio Frequency Identification Attendance System is Arduino based project, for marking attendance using card scanning and save it into local database.</p>
