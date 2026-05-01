@@ -4,7 +4,7 @@
 
 ## 🚀 Live Demo
 
-[View live site →](https://your-domain.com)
+[View live site →](https://moeezraza.netlify.app)
 
 ## ✨ Features
 
@@ -30,8 +30,8 @@
 
 1. Clone the repository
   ```bash
-  git clone https://github.com/yourusername/your-portfolio.git
-  cd your-portfolio
+  git clone https://github.com/moeezraza35/Portfolio.git
+  cd Portfolio
   ```
 
 2. Install dependencies
@@ -44,18 +44,16 @@
   npm run dev
   ```
 
-4. Open [http://localhost:5173](http://localhost:5173) to view it.
+4. Open [http://localhost:3000](http://localhost:3000) to view it.
 
 ## 🧱 Project Structure
 
 ```
 src/
-├── assets/          # images, icons, fonts
+├── assets/          # images, icons, fonts, styles
 ├── components/      # reusable UI components
 ├── context/         # React contexts (theme, scroll)
-├── hooks/           # custom hooks
 ├── pages/           # page components (Home, About, Contact, Admin)
-├── styles/          # global CSS + Tailwind imports
 ├── utils/           # helpers, API calls
 ├── contact.tsx      # Entry point for contact page
 └── main.tsx         # entry point for landing page
@@ -80,9 +78,9 @@ The contact form submits data to a Google Sheet via a Google Apps Script web app
 ## 🧑‍💻 Author
 
 **Moeez Raza**
-- [Portfolio](https://your-domain.com)
-- [GitHub](https://github.com/yourusername)
-- [LinkedIn](https://linkedin.com/in/yourusername)
+- [Portfolio](https://moeezraza.netlify.app)
+- [GitHub](https://github.com/moeezraza35)
+- [LinkedIn](https://linkedin.com/in/moeez-raza-773103282/)
 
 ## 📝 License
 
@@ -92,5 +90,3 @@ This project is open source and available under the [MIT License](LICENSE).
 
 _If you find any issues or have suggestions, feel free to open an issue or reach out directly._
 ```
-
-Adjust sections like `Live Demo`, `Deployment`, and author links before publishing.
