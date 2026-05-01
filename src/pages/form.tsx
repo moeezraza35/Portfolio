@@ -56,7 +56,7 @@ function ContactForm(){
                 <dd>Once you submit the form, I will contact you personally via email or the contact method you specify. No automated responses or bots are used.</dd>
 
                 <dt>No chat room or live chat</dt>
-                <dd>This website is built with PHP and does not include any live chat, messaging system, or chat room functionality.</dd>
+                <dd>This website is built with ReactJS and does not include any live chat, messaging system, or chat room functionality.</dd>
 
                 <dt>Third-party platforms for conversation</dt>
                 <dd>For detailed discussions, project collaboration, or real-time communication, we may continue the conversation on platforms like WhatsApp, LinkedIn, Skype, or email - whichever suits you best.</dd>
