@@ -108,18 +108,18 @@ function CardContent(props: { img:string, title:string, children?:ReactNode }) {
         <div className="body">
           {props.children}
         </div>
-        <button>
+        {/* <button>
           Learn More →
-        </button>
+        </button> */}
       </div>
     </div>
   );
 }
-function ImageBox (props: {name:string, type:string}){
+function ImageBox (props: {name:string, type:string, img:string}){
   return (
     <div className="group img-box">
       <div>
-        <img src="/favicon.svg" alt=""/>
+        <img src={props.img} alt=""/>
       </div>
       <h4>
         {props.name}
