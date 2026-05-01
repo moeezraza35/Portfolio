@@ -89,4 +89,3 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 _If you find any issues or have suggestions, feel free to open an issue or reach out directly._
-```
