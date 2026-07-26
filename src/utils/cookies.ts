@@ -21,7 +21,7 @@ function getCookies():any {
       key += cookie[i]
   }
   if (key !== "")
-    result[key] = val
+    result[key.trim()] = val
   return result
 }
 function getCookie(key:string):string|undefined{

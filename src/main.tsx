@@ -1,6 +1,6 @@
-import { StrictMode, useEffect } from 'react'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { LoadingProvider } from './context/loading'
 import { ScrollProvider } from './context/scroll'
 import { loadTheme } from './utils/theme'
@@ -8,7 +8,7 @@ import Header from './components/header'
 import Footer from './components/footer'
 import Home from './pages/home'
 import NotFound from './pages/404'
-import './assets/App.css'
+import './assets/styles.css'
 
 function App(){
   useEffect(() => {loadTheme()}, [])
@@ -29,7 +29,5 @@ function App(){
 }
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+  <App />
 )

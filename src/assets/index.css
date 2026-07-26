@@ -1,55 +1,141 @@
-@import "tailwindcss";
-@tailwind utilities;
-
-@font-face{
-  font-family: Nunito;
-  src: url("./Nunito.ttf");
-}
-
+/* ============================================
+   1. BASE (DEFAULT LIGHT THEME)
+   Applied when NO data-theme is set.
+   ============================================ */
 :root {
-  --primary-color:        #40a748;
-  --primary-hover-color:  #2f9437;
-  --secondary-color:      #849219;
-  --highlight-color:      #7f7f7f7f;
-  --link-color:           #646cff;
-  --link-hover-color:     #535bf2;
-  --primary-font:       Nunito;
-  --secondary-font:     system-ui, Arial, Helvetica, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--secondary-font);
+  --radius: 0.875rem;
+  --background: oklch(0.995 0 0);
+  --foreground: oklch(0.15 0.01 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.01 240);
+  --muted: oklch(0.97 0.005 240);
+  --muted-foreground: oklch(0.45 0.01 240);
+  --primary: oklch(0.62 0.17 145);           /* #40a748 */
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.62 0.14 110);         /* #849219 */
+  --secondary-foreground: oklch(0.99 0 0);
+  --accent: oklch(0.95 0.03 145);
+  --accent-foreground: oklch(0.2 0.05 145);
+  --border: oklch(0.9 0.005 240);
+  --input: oklch(0.94 0.005 240);
+  --ring: oklch(0.62 0.17 145);
+  --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--primary) 25%, transparent);
+  --shadow-lift: 0 20px 60px -20px color-mix(in oklab, black 25%, transparent);
+  --gradient-primary: linear-gradient(135deg, oklch(0.62 0.17 145), oklch(0.62 0.14 110));
+  --grid-line: color-mix(in oklab, var(--foreground) 8%, transparent);
+  --overlay-base: white;  /* 👈 ADD THIS LINE */
 }
-@media (prefers-color-scheme: light) {
-  :root, html[data-theme="auto"] {
-    --text-color:         #000000;
-    --bg-color:           #ffffff;
-    --fg-color:           #e0e0e0;
-    color-scheme: light;
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root, html[data-theme="auto"] {
-    --text-color:         #ffffff;
-    --bg-color:           #222222;
-    --fg-color:           #343434;
-    color-scheme: dark;
-  }
-}
+
+/* ============================================
+   2. EXPLICIT LIGHT THEME
+   Overrides base when user manually sets data-theme="light"
+   ============================================ */
+:root,
 html[data-theme="light"] {
-  --text-color:           #000000;
-  --bg-color:             #ffffff;
-  --fg-color:             #e0e0e0;
-  color-scheme: light;
+  --background: oklch(0.995 0 0);
+  --foreground: oklch(0.15 0.01 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.01 240);
+  --muted: oklch(0.97 0.005 240);
+  --muted-foreground: oklch(0.45 0.01 240);
+  --primary: oklch(0.62 0.17 145);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.62 0.14 110);
+  --secondary-foreground: oklch(0.99 0 0);
+  --accent: oklch(0.95 0.03 145);
+  --accent-foreground: oklch(0.2 0.05 145);
+  --border: oklch(0.9 0.005 240);
+  --input: oklch(0.94 0.005 240);
+  --ring: oklch(0.62 0.17 145);
+  --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--primary) 25%, transparent);
+  --shadow-lift: 0 20px 60px -20px color-mix(in oklab, black 25%, transparent);
+  --gradient-primary: linear-gradient(135deg, oklch(0.62 0.17 145), oklch(0.62 0.14 110));
+  --grid-line: color-mix(in oklab, var(--foreground) 8%, transparent);
+  --overlay-base: white;  /* 👈 ADD THIS LINE */
 }
+
+/* ============================================
+   3. EXPLICIT DARK THEME
+   Applied when user manually sets data-theme="dark"
+   ============================================ */
 html[data-theme="dark"] {
-  --text-color:           #ffffff;
-  --bg-color:             #222222;
-  --fg-color:             #343434;
-  color-scheme: dark;
+  --background: oklch(0.145 0.01 260);          /* Deep slate */
+  --foreground: oklch(0.985 0.005 240);         /* Near white */
+  --card: oklch(0.18 0.01 260);                 /* Slightly lighter than bg */
+  --card-foreground: oklch(0.985 0.005 240);
+  --muted: oklch(0.25 0.01 260);
+  --muted-foreground: oklch(0.65 0.01 240);
+  --primary: oklch(0.62 0.17 145);              /* Brand color stays exactly the same */
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.62 0.14 110);            /* Brand color stays exactly the same */
+  --secondary-foreground: oklch(0.99 0 0);
+  --accent: oklch(0.25 0.05 145);               /* Darker accent background */
+  --accent-foreground: oklch(0.9 0.03 145);     /* Lighter accent text */
+  --border: oklch(0.3 0.01 260);
+  --input: oklch(0.25 0.01 260);
+  --ring: oklch(0.62 0.17 145);
+  --shadow-soft: 0 10px 30px -12px color-mix(in oklab, white 15%, transparent);  /* Glow effect on dark */
+  --shadow-lift: 0 20px 60px -20px color-mix(in oklab, white 10%, transparent); /* Lighter lift */
+  --gradient-primary: linear-gradient(135deg, oklch(0.62 0.17 145), oklch(0.62 0.14 110)); /* Same gradient */
+  --grid-line: color-mix(in oklab, var(--foreground) 8%, transparent);           /* Auto white grid lines */
+  --overlay-base: black;  /* 👈 ADD THIS LINE */
+}
+
+/* ============================================
+   4. AUTO THEME (RESPECTS SYSTEM PREFERENCE)
+   Applied when user sets data-theme="auto" OR nothing is set (targeting :root)
+   ============================================ */
+
+/* 4a. System prefers LIGHT */
+@media (prefers-color-scheme: light) {
+  :root,
+  html[data-theme="auto"] {
+    --background: oklch(0.995 0 0);
+    --foreground: oklch(0.15 0.01 240);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.15 0.01 240);
+    --muted: oklch(0.97 0.005 240);
+    --muted-foreground: oklch(0.45 0.01 240);
+    --primary: oklch(0.62 0.17 145);
+    --primary-foreground: oklch(0.99 0 0);
+    --secondary: oklch(0.62 0.14 110);
+    --secondary-foreground: oklch(0.99 0 0);
+    --accent: oklch(0.95 0.03 145);
+    --accent-foreground: oklch(0.2 0.05 145);
+    --border: oklch(0.9 0.005 240);
+    --input: oklch(0.94 0.005 240);
+    --ring: oklch(0.62 0.17 145);
+    --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--primary) 25%, transparent);
+    --shadow-lift: 0 20px 60px -20px color-mix(in oklab, black 25%, transparent);
+    --gradient-primary: linear-gradient(135deg, oklch(0.62 0.17 145), oklch(0.62 0.14 110));
+    --grid-line: color-mix(in oklab, var(--foreground) 8%, transparent);
+  --overlay-base: white;  /* 👈 ADD THIS LINE */
+  }
+}
+
+/* 4b. System prefers DARK */
+@media (prefers-color-scheme: dark) {
+  :root,
+  html[data-theme="auto"] {
+    --background: oklch(0.145 0.01 260);
+    --foreground: oklch(0.985 0.005 240);
+    --card: oklch(0.18 0.01 260);
+    --card-foreground: oklch(0.985 0.005 240);
+    --muted: oklch(0.25 0.01 260);
+    --muted-foreground: oklch(0.65 0.01 240);
+    --primary: oklch(0.62 0.17 145);
+    --primary-foreground: oklch(0.99 0 0);
+    --secondary: oklch(0.62 0.14 110);
+    --secondary-foreground: oklch(0.99 0 0);
+    --accent: oklch(0.25 0.05 145);
+    --accent-foreground: oklch(0.9 0.03 145);
+    --border: oklch(0.3 0.01 260);
+    --input: oklch(0.25 0.01 260);
+    --ring: oklch(0.62 0.17 145);
+    --shadow-soft: 0 10px 30px -12px color-mix(in oklab, white 15%, transparent);
+    --shadow-lift: 0 20px 60px -20px color-mix(in oklab, white 10%, transparent);
+    --gradient-primary: linear-gradient(135deg, oklch(0.62 0.17 145), oklch(0.62 0.14 110));
+    --grid-line: color-mix(in oklab, var(--foreground) 8%, transparent);
+    --overlay-base: black;  /* 👈 ADD THIS LINE */
+  }
 }
