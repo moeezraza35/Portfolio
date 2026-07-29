@@ -5,21 +5,27 @@ const obmms = "/images/project-obmms.jpg"
 const PROJECTS = [
   {
     title: "OBMMS",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. A hospital management system streamlining patient flow, billing, and analytics.",
+    desc: "A comprehensive fleet management SaaS that secures private bus transportation through role-based payment gating. Administrators gain a centralized command center to monitor live routes, manage financial ledgers, and enforce access controls—ensuring only verified, paid riders board the vehicle.",
+    image: obmms,
+    tag: "SaaS",
+  },
+  {
+    title: "Tourist Support Site",
+    desc: "An end-to-end travel marketplace that transforms how tour operators manage bookings. From an intuitive admin suite for inventory and package configuration to automated email sequences and real-time booking status tracking, this platform streamlines operations while keeping travelers informed at every stage.",
     image: obmms,
     tag: "Full Stack",
   },
   {
-    title: "OBMMS",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Modules for OPD, IPD, pharmacy, and lab with real-time dashboards.",
+    title: "Attendance System",
+    desc: "An enterprise-grade hybrid attendance solution combining web-based management with IoT hardware (RFID & Biometric). It automates the entire attendance lifecycle—from real-time logging to generating filtered PDF reports for staff and students across multiple departments, drastically reducing manual administrative overhead.",
     image: obmms,
-    tag: "Healthcare",
+    tag: "IOT",
   },
   {
-    title: "OBMMS",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Role-based access, audit trails, and printable reports.",
+    title: "Car Insurance System",
+    desc: "A dedicated policy lifecycle management system built for GTRS Club. It centralizes vehicle and owner data while automating critical backend operations—including expiry detection, automated email alerts, and seamless insurance certificate generation—ensuring zero lapse in coverage.",
     image: obmms,
-    tag: "Enterprise",
+    tag: "Full Stack",
   },
 ];
 

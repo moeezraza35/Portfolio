@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Bold, Italic, Underline, Type } from "lucide-react";
 
 const SIZES = [
@@ -8,13 +8,37 @@ const SIZES = [
   { label: "XL", value: "6" },
 ];
 
-export default function RichTextEditor({ placeholder }: { placeholder?: string }) {
+type RichTextEditorProps = {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+};
+
+export default function RichTextEditor({ value, onChange, placeholder }: RichTextEditorProps) {
   const editorRef = useRef<HTMLDivElement>(null);
-  const [empty, setEmpty] = useState(true);
+  const [empty, setEmpty] = useState(!value.trim());
+
+  useEffect(() => {
+    const editor = editorRef.current;
+
+    if (!editor) {
+      return;
+    }
+
+    if (editor.innerHTML !== value) {
+      editor.innerHTML = value;
+    }
+
+    setEmpty(!editor.textContent?.trim());
+  }, [value]);
 
   const exec = (cmd: string, value?: string) => {
     editorRef.current?.focus();
     document.execCommand(cmd, false, value);
+
+    const nextValue = editorRef.current?.innerHTML ?? "";
+    setEmpty(!(editorRef.current?.textContent ?? "").trim());
+    onChange(nextValue);
   };
 
   return (
@@ -53,7 +77,12 @@ export default function RichTextEditor({ placeholder }: { placeholder?: string }
           ref={editorRef}
           contentEditable
           suppressContentEditableWarning
-          onInput={(e) => setEmpty(!(e.currentTarget.textContent ?? "").length)}
+          onInput={(e) => {
+            const nextValue = e.currentTarget.innerHTML;
+
+            setEmpty(!(e.currentTarget.textContent ?? "").trim());
+            onChange(nextValue);
+          }}
           className="min-h-40 max-h-90 overflow-auto px-4 py-3 text-sm leading-relaxed outline-none"
         />
         {empty && (

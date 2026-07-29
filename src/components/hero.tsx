@@ -46,15 +46,13 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="/contact/"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-(--shadow-soft) transition-transform hover:-translate-y-0.5"
-            >
+              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-(--shadow-soft) transition-transform hover:-translate-y-0.5">
               Contact
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
-              href="#"
-              className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-white/70 px-6 py-3 text-sm font-semibold text-black backdrop-blur transition-colors hover:border-foreground/40"
-            >
+              href="https://drive.google.com/file/d/1TyGn45saML9243kB3S13JcChGt7F_0TP/view?usp=sharing"
+              className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-white/70 px-6 py-3 text-sm font-semibold text-black backdrop-blur transition-colors hover:border-foreground/40">
               <Download size={16} />
               Download CV
             </a>

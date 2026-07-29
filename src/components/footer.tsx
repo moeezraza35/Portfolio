@@ -23,12 +23,16 @@ export default function Footer() {
             Moeez Raza — Full Stack web and Mobile app developer building software that lasts.
           </p>
           <div className="mt-5 flex gap-2">
-            {[GithubIcon, LinkedinIcon, TwitterIcon].map((Icon, i) => (
+            {[
+              {Icon: GithubIcon, url: "https://github.com/moeezraza35"},
+              {Icon: LinkedinIcon, url: "https://www.linkedin.com/in/moeez-raza-773103282/"},
+              {Icon: TwitterIcon, url: "https://x.com/moeez_raza_35"}
+            ].map(({Icon, url}, i) => (
               <a
                 key={i}
-                href="#"
-                className="grid h-9 w-9 place-items-center rounded-lg border border-primary-foreground/25 transition-colors hover:border-primary-foreground hover:bg-primary-foreground hover:text-primary"
-              >
+                href={url}
+                target="_blank"
+                className="grid h-9 w-9 place-items-center rounded-lg border border-primary-foreground/25 transition-colors hover:border-primary-foreground hover:bg-primary-foreground hover:text-primary">
                 <Icon width="16px" height="16px" />
               </a>
             ))}
@@ -41,14 +45,15 @@ export default function Footer() {
             {["Home", "Services", "Projects", "Tools", "Reviews", "Skills"].map((l) => (
               <li key={l}><a href={`#${l.toLowerCase()}`} className="hover:text-primary-foreground hover:underline">{l}</a></li>
             ))}
+            <li><a href="/contact/" className="hover:text-primary-foreground hover:underline">Contact</a></li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-mono text-xs uppercase tracking-widest text-primary-foreground/90">Contact</h4>
           <ul className="mt-4 space-y-3 text-sm text-primary-foreground/85">
-            <li className="flex items-center gap-2"><Mail size={14} /> moeez@example.com</li>
-            <li className="flex items-center gap-2"><Phone size={14} /> +92 300 0000000</li>
+            <li className="flex items-center gap-2"><Mail size={14} /> moeez.raza.dev@gmail.com</li>
+            <li className="flex items-center gap-2"><Phone size={14} /> +92 310 4351121</li>
             <li className="flex items-center gap-2"><MapPin size={14} /> Lahore, Pakistan</li>
           </ul>
         </div>

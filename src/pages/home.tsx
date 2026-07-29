@@ -62,7 +62,7 @@ function Home(){
         <ImageWithText
           eyebrow="How I design"
           heading="Blueprint and Architecture"
-          paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Every project starts with a clear map — data flow, contracts, and boundaries drawn before a single line of code."
+          paragraph="Great software starts with people, not code. I begin by stepping into the user's shoes—analyzing behavior, friction points, and interaction patterns to design intuitive, frictionless experiences. I translate these insights into high-fidelity UI mockups while simultaneously architecting a resilient, normalized database schema tailored to the frontend logic. The backend then serves as a performant, fortified bridge, implementing multi-layered authentication and granular role-based authorization to create an impenetrable security barrier around every transaction."
           image={blueprint}
         />
       </section>
@@ -71,7 +71,7 @@ function Home(){
         <ImageWithText
           eyebrow="How I build with"
           heading="Modular Development"
-          paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Small, composable units with tight interfaces let features grow without breaking what already works. Every module earns its place."
+          paragraph="I champion a modular-first philosophy. Instead of building monolithic blocks, I construct and rigorously test isolated prototypes in a sandboxed environment—validating business logic and authentication flows before they ever interact. This decoupling enables surgical debugging, parallel development, and faster feature delivery. It scales effortlessly across architectures, whether I'm orchestrating a fleet of microservices or structuring a clean, maintainable monolith with clearly defined domain boundaries."
           image={modular}
           reverse
         />
@@ -79,9 +79,9 @@ function Home(){
 
       <section id="debug">
         <ImageWithText
-          eyebrow="How I used to"
+          eyebrow="How I handle"
           heading="Debug and Maintain"
-          paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Logs you can read, tests you can trust, and a rollback that always works. Maintenance is a first-class feature, not an afterthought."
+          paragraph="I treat debugging as a methodical investigation, not a guessing game. I begin by instrumenting the system to trace data packets across every execution layer—isolating anomalies through controlled, reproducible test scenarios. This forensic precision ensures every fix is validated against edge-case datasets without introducing regressions. Beyond the immediate bug, I engineer for durability: decoupled, side-effect-free modules and clean abstractions ensure that scaling, upgrading, or refactoring isn't a risky overhaul, but a seamless, predictable evolution of the system."
           image={debugImg}
         />
       </section>
