@@ -4,7 +4,6 @@ import { createRoot } from 'react-dom/client'
 import { LoadingProvider } from './context/loading'
 import { ScrollProvider } from './context/scroll'
 import { loadTheme } from './utils/theme'
-import Header from './components/header'
 import Footer from './components/footer'
 import Home from './pages/home'
 import NotFound from './pages/404'
@@ -16,7 +15,6 @@ function App(){
     <BrowserRouter>
       <LoadingProvider>
         <ScrollProvider>
-          <Header/>
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='*' element={<NotFound/>}/>

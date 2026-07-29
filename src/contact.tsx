@@ -6,10 +6,10 @@ import { ScrollProvider } from './context/scroll'
 import { loadTheme } from './utils/theme'
 import Header from './components/header'
 import Footer from './components/footer'
-import ContactForm from './pages/form'
+import ContactPage from './pages/form'
 import NotFound from './pages/404'
 import Submit from './pages/submit'
-import './assets/App.css'
+import './assets/styles.css'
 
 function App(){
   useEffect(() => {loadTheme()}, [])
@@ -19,7 +19,7 @@ function App(){
         <ScrollProvider>
           <Header/>
           <Routes>
-            <Route path='/contact/' element={<ContactForm/>}/>
+            <Route path='/contact/' element={<ContactPage/>}/>
             <Route path="/contact/submit/" element={<Submit/>}/>
             <Route path='*' element={<NotFound/>}/>
           </Routes>

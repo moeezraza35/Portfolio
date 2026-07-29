@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import Header from '../components/header'
 import Hero from "../components/hero"
 import ImageWithText from "../components/imagewithtext"
 import Marquee from "../components/marquee"
@@ -12,8 +14,38 @@ import modular from "../assets/modular.jpg"
 import debugImg from "../assets/debug.jpg"
 
 function Home(){
+  useEffect(() => {
+    const handleScroll = () => {
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    const targetId = hash.slice(1);
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    // Small delay to ensure the DOM is fully updated
+    setTimeout(() => {
+      const header = document.querySelector('header');
+      const headerHeight = header?.getBoundingClientRect().height || 80;
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+      
+      window.scrollTo({
+        top: targetPosition - headerHeight,
+        behavior: 'smooth',
+      });
+    }, 100);
+  };
+
+  // Listen to hash changes
+  window.addEventListener('hashchange', handleScroll);
+  // Run on mount
+  handleScroll();
+
+  return () => window.removeEventListener('hashchange', handleScroll);
+}, []);
   return (
     <>
+      <Header/>
       <section id="hero">
         <Hero />
       </section>

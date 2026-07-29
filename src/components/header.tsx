@@ -15,13 +15,13 @@ import {
 import { getTheme, setTheme } from "../utils/theme"
 
 const NAV = [
-  { id: "hero", label: "Home", Icon: Home },
-  { id: "services", label: "Services", Icon: Sparkles },
-  { id: "projects", label: "Projects", Icon: LayoutGrid },
-  { id: "tools", label: "Tools", Icon: Wrench },
-  { id: "testimonials", label: "Reviews", Icon: MessageSquareQuote },
-  { id: "learn", label: "Learn", Icon: GraduationCap },
-  { id: "skills", label: "Skills", Icon: Cpu },
+  { id: "/", label: "Home", Icon: Home },
+  { id: "/#services", label: "Services", Icon: Sparkles },
+  { id: "/#projects", label: "Projects", Icon: LayoutGrid },
+  { id: "/#tools", label: "Tools", Icon: Wrench },
+  { id: "/#testimonials", label: "Reviews", Icon: MessageSquareQuote },
+  { id: "/#learn", label: "Learn", Icon: GraduationCap },
+  { id: "/#skills", label: "Skills", Icon: Cpu },
 ];
 
 export default function Header() {
@@ -47,7 +47,7 @@ export default function Header() {
               : "border-transparent bg-primary text-primary-foreground shadow-[0_10px_30px_-12px_rgba(64,167,72,0.6)]",
           ].join(" ")}
         >
-          <a href="#hero" className="flex items-center gap-2 font-display font-bold">
+          <a href="/" className="flex items-center gap-2 font-display font-bold">
             <img src={scrolled ? "/favicon.svg" : "/logo-white.svg"} alt="MR" className="h-7 w-7" />
             <span className="hidden text-base tracking-tight sm:inline">Moeez Raza</span>
           </a>
@@ -56,7 +56,7 @@ export default function Header() {
             {NAV.map(({ id, label, Icon }) => (
               <a
                 key={id}
-                href={`#${id}`}
+                href={id}
                 className={[
                   "group flex items-center gap-1.5 rounded-lg px-2.5 py-1.5 text-sm font-medium transition-colors",
                   scrolled ? "hover:bg-primary/10 hover:text-primary" : "hover:bg-white/15",
@@ -118,7 +118,7 @@ export default function Header() {
               <input
                 autoFocus
                 placeholder="Search projects, tools, skills…"
-                className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+                className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground text-black"
               />
               <button onClick={() => setSearch(false)} className="text-muted-foreground hover:text-foreground">
                 <X size={16} />
@@ -141,7 +141,7 @@ export default function Header() {
         />
         <aside
           className={[
-            "absolute right-0 top-0 h-full w-[82%] max-w-sm bg-white shadow-2xl transition-transform duration-300",
+            "absolute right-0 top-0 h-full w-[82%] max-w-sm bg-background shadow-2xl transition-transform duration-300",
             drawer ? "translate-x-0" : "translate-x-full",
           ].join(" ")}
         >
@@ -158,7 +158,7 @@ export default function Header() {
             {NAV.map(({ id, label, Icon }) => (
               <a
                 key={id}
-                href={`#${id}`}
+                href={id}
                 onClick={() => setDrawer(false)}
                 className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium hover:bg-primary/10 hover:text-primary"
               >
