@@ -1,5 +1,5 @@
 import { useReveal } from "../hooks/use-reveal";
-import { GithubIcon } from "./ui/icons";
+import { GithubIcon } from "./icons";
 import {
   Code,
   MousePointerClick,

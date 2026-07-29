@@ -8,7 +8,7 @@ import {
   GithubIcon,
   LinkedinIcon,
   TwitterIcon
-} from "./ui/icons";
+} from "./icons";
 
 export default function Footer() {
   return (
