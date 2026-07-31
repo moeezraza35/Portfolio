@@ -14,7 +14,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="relative min-h-svh overflow-hidden pt-28 pb-16 sm:pt-32">
+    <div className="relative flex min-h-svh items-center overflow-hidden py-16 sm:py-20">
       {/* Carousel bg */}
       <div className="absolute inset-0">
         {SLIDES.map((src, idx) => (
@@ -52,6 +52,7 @@ export default function Hero() {
             </a>
             <a
               href="https://drive.google.com/file/d/1TyGn45saML9243kB3S13JcChGt7F_0TP/view?usp=sharing"
+              target="_blank"
               className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-white/70 px-6 py-3 text-sm font-semibold text-black backdrop-blur transition-colors hover:border-foreground/40">
               <Download size={16} />
               Download CV

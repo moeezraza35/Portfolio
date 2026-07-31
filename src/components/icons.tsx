@@ -35,4 +35,12 @@ function TwitterIcon(props:IconProps){
     </svg>
   )
 }
-export { GithubIcon, LinkedinIcon, TwitterIcon }
+function FiverrIcon(props:IconProps){
+  const { color, height, width } = { ...defaultProps, ...props }
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 192 192" fill="none" stroke={color} strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-fiverr" aria-hidden="true">
+      <path d="M121.1 170h34.75V67.04H90.21v-7.72s0-9.01 9.01-9.01h21.88V22H99.22s-43.76 0-43.76 37.32v7.72h-19.3v28.31h19.3v74.64h34.75V95.36h30.89V170Z"></path>
+    </svg>
+  )
+}
+export { GithubIcon, LinkedinIcon, TwitterIcon, FiverrIcon }

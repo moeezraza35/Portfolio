@@ -1,31 +1,36 @@
 import { ArrowUpRight } from "lucide-react";
 import { useReveal } from "../hooks/use-reveal";
 
-const obmms = "/images/project-obmms.jpg"
 const PROJECTS = [
   {
     title: "OBMMS",
     desc: "A comprehensive fleet management SaaS that secures private bus transportation through role-based payment gating. Administrators gain a centralized command center to monitor live routes, manage financial ledgers, and enforce access controls—ensuring only verified, paid riders board the vehicle.",
-    image: obmms,
+    image: "/images/project-obmms.png",
     tag: "SaaS",
   },
   {
     title: "Tourist Support Site",
     desc: "An end-to-end travel marketplace that transforms how tour operators manage bookings. From an intuitive admin suite for inventory and package configuration to automated email sequences and real-time booking status tracking, this platform streamlines operations while keeping travelers informed at every stage.",
-    image: obmms,
+    image: "/images/project-vista.png",
     tag: "Full Stack",
   },
   {
     title: "Attendance System",
     desc: "An enterprise-grade hybrid attendance solution combining web-based management with IoT hardware (RFID & Biometric). It automates the entire attendance lifecycle—from real-time logging to generating filtered PDF reports for staff and students across multiple departments, drastically reducing manual administrative overhead.",
-    image: obmms,
+    image: "/images/project-ric.png",
     tag: "IOT",
   },
   {
     title: "Car Insurance System",
     desc: "A dedicated policy lifecycle management system built for GTRS Club. It centralizes vehicle and owner data while automating critical backend operations—including expiry detection, automated email alerts, and seamless insurance certificate generation—ensuring zero lapse in coverage.",
-    image: obmms,
+    image: "/images/project-gtrs.png",
     tag: "Full Stack",
+  },
+  {
+    title: "WebSocket Handler",
+    desc: "A full-stack WebSocket solution engineered for seamless real-time communication. The FastAPI backend handles dynamic room provisioning and participant identification, while a dedicated React adapter manages resilient reconnection logic—ensuring network instability never disrupts the user experience.",
+    image: "/images/project-wshandler.png",
+    tag: "Real Time",
   },
 ];
 

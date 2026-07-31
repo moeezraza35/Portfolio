@@ -62,7 +62,7 @@ function Home(){
         <ImageWithText
           eyebrow="How I design"
           heading="Blueprint and Architecture"
-          paragraph="Great software starts with people, not code. I begin by stepping into the user's shoes—analyzing behavior, friction points, and interaction patterns to design intuitive, frictionless experiences. I translate these insights into high-fidelity UI mockups while simultaneously architecting a resilient, normalized database schema tailored to the frontend logic. The backend then serves as a performant, fortified bridge, implementing multi-layered authentication and granular role-based authorization to create an impenetrable security barrier around every transaction."
+          paragraph="Great software starts with understanding people, not just code. I design frictionless UIs paired with normalized databases, then fortify the backend with multi-layered authentication and granular role-based authorization—creating a system that is both intuitive to use and impenetrable to threats."
           image={blueprint}
         />
       </section>
@@ -71,7 +71,7 @@ function Home(){
         <ImageWithText
           eyebrow="How I build with"
           heading="Modular Development"
-          paragraph="I champion a modular-first philosophy. Instead of building monolithic blocks, I construct and rigorously test isolated prototypes in a sandboxed environment—validating business logic and authentication flows before they ever interact. This decoupling enables surgical debugging, parallel development, and faster feature delivery. It scales effortlessly across architectures, whether I'm orchestrating a fleet of microservices or structuring a clean, maintainable monolith with clearly defined domain boundaries."
+          paragraph="By rigorously testing components in isolation, I eliminate integration surprises and accelerate your time-to-market. This approach keeps your system resilient and maintainable—whether we're orchestrating microservices or refining a clean monolith."
           image={modular}
           reverse
         />
@@ -81,7 +81,7 @@ function Home(){
         <ImageWithText
           eyebrow="How I handle"
           heading="Debug and Maintain"
-          paragraph="I treat debugging as a methodical investigation, not a guessing game. I begin by instrumenting the system to trace data packets across every execution layer—isolating anomalies through controlled, reproducible test scenarios. This forensic precision ensures every fix is validated against edge-case datasets without introducing regressions. Beyond the immediate bug, I engineer for durability: decoupled, side-effect-free modules and clean abstractions ensure that scaling, upgrading, or refactoring isn't a risky overhaul, but a seamless, predictable evolution of the system."
+          paragraph="Methodical debugging ensures your system stays resilient. I trace issues to their root, validate fixes rigorously, and engineer durable, decoupled modules—so updates and scaling are seamless, not risky. Your project remains stable, maintainable, and future-proof."
           image={debugImg}
         />
       </section>

@@ -5,6 +5,7 @@ import {
   Send
 } from "lucide-react";
 import {
+  FiverrIcon,
   GithubIcon,
   LinkedinIcon,
   TwitterIcon
@@ -26,7 +27,8 @@ export default function Footer() {
             {[
               {Icon: GithubIcon, url: "https://github.com/moeezraza35"},
               {Icon: LinkedinIcon, url: "https://www.linkedin.com/in/moeez-raza-773103282/"},
-              {Icon: TwitterIcon, url: "https://x.com/moeez_raza_35"}
+              {Icon: TwitterIcon, url: "https://x.com/moeez_raza_35"},
+              {Icon: FiverrIcon, url: "https://www.fiverr.com/users/moeez_raza_35"}
             ].map(({Icon, url}, i) => (
               <a
                 key={i}
