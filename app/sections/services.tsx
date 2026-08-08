@@ -1,11 +1,17 @@
-import { Globe, Smartphone, Plug, Radio } from "lucide-react";
+import { Globe, Smartphone, Plug, Radio, ArrowRight } from "lucide-react";
 import Reveal from "../components/reveal";
 
-const SERVICES = [
-  { title: "Full Stack Web Development", desc: "End-to-end web apps with React, Next.js and modern APIs.", Icon: Globe },
-  { title: "Mobile App Development", desc: "Cross-platform apps that feel native on iOS and Android.", Icon: Smartphone },
-  { title: "API Integration", desc: "Wire third-party services cleanly with resilient contracts.", Icon: Plug },
-  { title: "Real Time App Development", desc: "WebSockets and streams for live dashboards and chat.", Icon: Radio },
+type ServiceType = {
+  imageSrc: string,
+  gigLink: string,
+  delay?: number,
+}
+
+const SERVICES: Array<ServiceType> = [
+  { imageSrc: "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/489762509/original/bb1de0ccd68dc322259afb860f5bd3268cfcb2dc/do-fast-api-and-react-js-full-stack-web-development.jpg", gigLink: "https://www.fiverr.com/moeez_raza_35/do-fast-api-and-react-js-full-stack-web-development"},
+  { imageSrc: "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/491457597/original/c14986a4ca6b9eddb01ecf6b1be9b35d5c842147/build-real-time-chat-web-app-and-messaging-system.png", gigLink: "https://www.fiverr.com/moeez_raza_35/build-real-time-chat-web-app-and-messaging-system"},
+  { imageSrc: "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/491528611/original/afb1ebbc3194f327b5035b4317fdb6b9dd992e28/integrate-third-party-api-stripe-open-ai-firebase-and-custom-api-connection.png", gigLink: "https://www.fiverr.com/moeez_raza_35/integrate-third-party-api-stripe-open-ai-firebase-and-custom-api-connection"},
+  { imageSrc: "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/491531086/original/9652d201685e338ffe518469b76cafe0f22d580f/develop-mobile-apps-ios-and-android-apps.png", gigLink: "https://www.fiverr.com/moeez_raza_35/develop-mobile-apps-ios-and-android-apps"},
 ];
 
 export default function Services() {
@@ -15,9 +21,9 @@ export default function Services() {
         <p className="eyebrow mb-3">Check out our</p>
         <h2 className="text-4xl font-black sm:text-5xl">Feature services</h2>
       </Reveal>
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {SERVICES.map(({ title, desc, Icon }, i) => (
-          <ServiceCard key={title} title={title} desc={desc} Icon={Icon} delay={i * 90} />
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {SERVICES.map(({imageSrc, gigLink}, i) => (
+          <ServiceCard key={i} imageSrc={imageSrc} gigLink={gigLink} delay={i * 90}/>
         ))}
       </div>
     </div>
@@ -25,20 +31,37 @@ export default function Services() {
 }
 
 function ServiceCard({
-  title, desc, Icon, delay,
-}: { title: string; desc: string; Icon: typeof Globe; delay: number }) {
+  imageSrc,
+  gigLink,
+  delay,
+}: ServiceType) {
   return (
     <Reveal
       style={{ animationDelay: `${delay}ms` }}
-      className="reveal group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-(--shadow-soft)">
-      <div className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-primary/10 blur-2xl transition-opacity group-hover:opacity-100" />
-      <div className="relative">
-        <div className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
-          <Icon size={22} />
+      className="reveal group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-(--shadow-soft)">
+      <a
+        href={gigLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block">
+        {/* Banner Image - Full bleed, border-to-border */}
+        <img
+          src={imageSrc}
+          alt="Fiverr Gig Banner"
+          className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+
+        {/* Overlay on Hover */}
+        <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          {/* <span className="rounded-full bg-white px-8 py-3 font-bold text-black shadow-lg transition-transform duration-300 group-hover:scale-110">
+            Order Now 🚀
+          </span> */}
+          
+          <span
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-primary shadow-lg transition-transform hover:-translate-y-0.5">
+            Order Now <ArrowRight size={16} />
+          </span>
         </div>
-        <h3 className="text-lg font-bold">{title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
-      </div>
+      </a>
     </Reveal>
   );
 }

@@ -38,7 +38,7 @@ function Slider({ slides, children }: SliderProps){
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         { children }
         {/* Indicators */}
-        <div className="absolute bottom-6 right-5 flex gap-2 sm:right-8">
+        <div className="absolute -bottom-6 right-5 flex gap-2 sm:right-8">
           {slides.map((_, idx) => (
             <button
               key={idx}
