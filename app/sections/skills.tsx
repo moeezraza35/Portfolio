@@ -7,7 +7,7 @@ const SKILLS: Array<ToolType> = [
   { name: "JavaScript", Icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
   { name: "TypeScript", Icon: "https://cdn.simpleicons.org/typescript/3178C6" },
   { name: "C/C++", Icon: "https://cdn.simpleicons.org/cplusplus/00599C" },
-  { name: "Go (GoLang)", Icon: "https://cdn.simpleicons.org/go/00ADD8" },
+  { name: "Go-Lang", Icon: "https://cdn.simpleicons.org/go/00ADD8" },
   { name: "FastAPI", Icon: "https://cdn.simpleicons.org/fastapi/009688" },
   { name: "Django", Icon: "https://cdn.simpleicons.org/django/092E20" },
   { name: "Flask", Icon: "https://cdn.simpleicons.org/flask/000000" },

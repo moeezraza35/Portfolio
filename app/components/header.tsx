@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import {
   Home,
@@ -142,7 +143,7 @@ export default function Header() {
           ].join(" ")}>
           <div className="flex items-center justify-between border-b border-border px-5 py-4">
             <div className="flex items-center gap-2 font-display font-bold">
-              <img src="/favicon.svg" alt="MR" className="h-7 w-7"/>
+              <img src={favicon.src} alt="MR" className="h-7 w-7"/>
               Menu
             </div>
             <button onClick={() => setDrawer(false)} aria-label="Close" className="grid h-9 w-9 place-items-center rounded-lg hover:bg-muted">

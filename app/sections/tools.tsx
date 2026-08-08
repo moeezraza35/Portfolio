@@ -10,7 +10,7 @@ const TOOLS: Array<ToolType> = [
   { name: "VS Code", Icon: "https://code.visualstudio.com/favicon.ico" },
   { name: "Cursor", Icon: "https://cursor.com/favicon.ico" },
   { name: "Android Studio", Icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/android-studio-icon.png" },
-  { name: "QT", Icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Qt_logo_2016.svg/1280px-Qt_logo_2016.svg.png" },
+  { name: "QT Creator", Icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Qt_logo_2016.svg/1280px-Qt_logo_2016.svg.png" },
   { name: "GitHub", Icon: GithubIcon },
   { name: "DeepSeek", Icon: "https://fe-static.deepseek.com/chat/favicon.svg" },
   { name: "LovableAI", Icon: "https://lovable.dev/favicon.svg" },
