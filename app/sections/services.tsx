@@ -1,4 +1,4 @@
-import { Globe, Smartphone, Plug, Radio, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Reveal from "../components/reveal";
 
 type ServiceType = {

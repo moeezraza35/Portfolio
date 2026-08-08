@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import Reveal from "../components/reveal";
 import obmms from "../assets/project-obmms.png";
 import vista from "../assets/project-vista.png";
